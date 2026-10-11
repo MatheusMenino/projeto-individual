@@ -1,0 +1,208 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+:root{
+    --cor-vermelho: #FF383C;
+    --cor-fundo: #08090B;
+    --cor-titulo: #ffffff;
+    --cor-descricao: #D1D3D6;
+    --fonte-descricao: 'Inter', sans-serif;
+    --fonte-titulo: 'Poppins', sans-serif;
+    --fonte-links: 'Monserrat', sans-serif;
+    --pelicula-96: rgba(8, 9, 11, 0.96);
+    --pelicula-74: rgba(8, 9, 11, 0.74);
+    --pelicula-7: rgba(8, 9, 11, 0.07);
+}   
+* a{
+    text-decoration: none;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+    background-color: var(--cor-fundo);
+}
+.logo{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+.logo h1{
+    color: var(--cor-titulo);
+    letter-spacing: 2px;
+    padding: 6px;
+    font-size: 22px;
+}
+.logo span{
+    color: var(--cor-vermelho);
+}
+.logo img{
+    width: 52px;
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+}
+nav li {
+    padding: 32px;
+}
+nav a{
+    color: var(--cor-titulo);
+    font: var(--fonte-descricao);
+    transition: 0.2s ease-in-out;
+}
+nav a:hover{
+    color: var(--cor-vermelho);
+    transition: 0.4s;
+}
+.btn-header{
+    display: flex;
+    margin-right: 16px;
+}
+.btn-login{
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    background-color: var(--cor-fundo);
+}
+.btn-login a{
+    color: var(--cor-titulo);
+    font: var(--fonte-links);
+    font-size: 16px;
+    transition: 0.2s ease-in-out;
+}
+.btn-login a:hover{
+    color: var(--cor-vermelho);
+    transition: 0.4s;
+}
+.btn-cadastro{
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    background-color: var(--cor-fundo);
+}
+.btn-cadastro a{
+    color: var(--cor-vermelho);
+    font: var(--fonte-links);
+    font-size: 16px;
+    transition: 0.2s ease-in-out;
+}
+.btn-cadastro a:hover{
+    color: var(--cor-titulo);
+    transition: 0.4s;
+}
+
+footer{
+    display: flex;
+    height: 25vh;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--cor-fundo);
+}
+
+.titulo-footer{
+    align-items: center;
+    margin-left: 5%;
+    width: 20vw;
+}
+.titulo-footer h2{
+    color: var(--cor-titulo);
+    font-size: 32px;
+    width: 10vw;
+}
+.titulo-footer span{
+    color: var(--cor-vermelho);
+}
+.titulo-footer p{
+    font: var(--fonte-descricao);
+    color: var(--cor-descricao);
+    padding-top: 4px;
+    font-size: 12px;
+    width: 10vw;
+}
+
+.nav-footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    letter-spacing: 0.3px;
+    width: 25vw;
+}
+
+.nav-footer h3{
+    color: var(--cor-descricao);
+    font-size: 20px;
+}
+.nav-footer a{
+    color: var(--cor-titulo);
+    transition: 0.2s ease-in-out;
+}
+.nav-footer li{
+    padding: 0.4px;
+    margin: 1px;
+    font-size: 14px;
+}
+.nav-footer a:hover{
+    color: var(--cor-vermelho);
+    transition: 0.4s ease;
+}
+
+.siga-me{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 35vw;
+    height: 25vh;
+    padding: 32px;
+    margin: 3px;
+}
+.siga-me h3{
+    color: var(--cor-descricao);
+    font: var(--fonte-descricao);
+}
+.icon-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2px;
+}
+.icon-footer a{
+    display: flex;
+    align-items: center;
+    color: var(--cor-descricao);
+    font-size: 14px;
+    font-weight: 300;
+    align-items: center;
+    transition: 0.2s ease-in-out;
+}
+.icon-footer a:hover{
+    color: var(--cor-vermelho);
+    transition: 0.4s ease;
+}
+.icon-footer img{
+    height: 26px;
+    width: 26px;
+    object-fit: contain;
+    margin: 4px 6px 0px -3px ;
+}
+
+.copy-footer{
+    display: flex;
+    justify-content: left;
+    justify-content: flex-end;
+    margin-top: 16px;
+}
+.copy-footer p{
+    color: var(--cor-descricao);
+    font: var(--fonte-descricao);
+    font-size: 12px;
+}
