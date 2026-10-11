@@ -1,0 +1,150 @@
+.home-historia {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container-historia {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.container-historia img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Película por cima da imagem */
+.container-historia::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.1) 5%,
+        rgba(0, 0, 0, 0.4) 15%,
+        rgba(0, 0, 0, 1) 100%
+    );
+
+    z-index: 0;
+    pointer-events: none;
+}
+
+.conteudo-historia {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+
+    z-index: 1;
+    color: white;
+}
+
+.conteudo-historia h1 {
+    width: 50%;
+    font-size: 64px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.conteudo-historia h2{
+    width: 40%;
+    font-size: 18px;
+    font-weight: 100;
+    color: var(--cor-descricao);
+}
+
+.conteudo-historia p {
+    font-size: 12px;
+    max-width: 310px;
+    line-height: 1.1;
+    font-weight: 300;
+    color: var(--cor-descricao);
+}
+
+
+/*    LINHA DO TEMPO      */
+
+.secao-tempo{
+    display: inline-block;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--cor-fundo);
+}
+
+.conteudo-tempo{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    padding-top: 2%;
+    padding-left: 10%;
+}
+
+.descricao1{
+    margin-bottom: 12px;
+    color: var(--cor-descricao);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.conteudo-tempo h2{
+    color: var(--cor-titulo);
+    margin-bottom: 18px;
+    width: 50%;
+    font-size: 32px;
+}
+
+.conteudo-tempo p {
+    width: 55%;
+    font-size: 16px;
+    color: var(--cor-descricao);
+    letter-spacing: 0.5px;
+}
+
+.container-fatos{
+    display: flex;
+    margin-left: 10%;
+    padding-top: 5%;
+    width: 85%;
+}
+.container-esquerda{
+    display: flex;
+    flex-direction: column;
+}
+.fato{
+    display: flex;
+    margin-bottom: 5%;
+    left: 10px;
+}
+.fato img{
+    width: 10%;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.conteudo-fato{
+    width: 30%;
+}
+
+.conteudo-fato h2{
+    color: var(--cor-titulo);
+    font: var(--fonte-titulo);
+    font-size: 22px;
+    padding: 6px 0px;
+}
+
+.conteudo-fato span{
+    color: var(--cor-vermelho-forte);
+    font-family: sans-serif;
+    font-weight: 300;
+    font-size: 32px;
+}
+
+.conteudo-fato p{
+    width: 70%;
+    color: var(--cor-descricao);
+}

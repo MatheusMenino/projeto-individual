@@ -43,6 +43,7 @@
 
 .container-imagem1{
     width: 50%;
+    height: 30vh;
 }
 
 .secaoSobre img{
@@ -50,7 +51,6 @@
 }
 
 /*      SECAO 2       */
-
 
 .secaoSobre2{
     display: flex;
@@ -80,11 +80,65 @@
     font-size: 32px;
 }
 
+.container-imagem2{
+    width: 100%;
+}
 .container-imagem2 img{
     width: 30%;
     object-fit: contain;
 }
 
 .container-imagem2 img:first-child{
-    padding-right: 10px;
+    width: 12vw ;
+}
+.container-imagem2 img:last-child{
+    margin-left: 70px;
+    width: 12vw;
+}
+
+
+/*      SEÇAO 3        */
+
+.secaoSobre3{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--cor-fundo);
+}
+
+.conteudo-sobre3{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding-top: 2%;
+    padding-left: 10%;
+}
+
+.container-imagem3{
+    width: 100%;
+    display: flex;
+}
+
+.conteudo-sobre3 h2{
+    color: var(--cor-titulo);
+    margin-bottom: 18px;
+    width: 40%;
+    font-size: 32px;
+}
+
+.container-imagem3{
+    width: 100%;
+}
+.container-imagem3 img{
+    width: 30%;
+    object-fit: contain;
+}
+
+.container-imagem3 img:first-child{
+    width: 12vw ;
+}
+.container-imagem3 img:last-child{
+    margin-left: 70px;
+    width: 12vw;
 }
