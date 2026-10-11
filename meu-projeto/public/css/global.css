@@ -19,6 +19,7 @@
     --pelicula-74: rgba(8, 9, 11, 0.74);
     --pelicula-7: rgba(8, 9, 11, 0.07);
 }   
+
 * a{
     text-decoration: none;
 }
@@ -29,6 +30,11 @@ header{
     align-items: center;
     height: 65px;
     background-color: var(--cor-fundo);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
 }
 .logo{
     display: flex;
