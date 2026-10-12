@@ -36,7 +36,7 @@
 .conteudo-home {
     position: absolute;
     top: 50%;
-    left: 10%;
+    left: 15%;
     transform: translateY(-50%);
 
     z-index: 1;
@@ -67,7 +67,7 @@
     margin-top: 40px;
     padding: 10px;
     border-radius: 4px;
-    background-color: var(--cor-vermelho);
+    background: var(--cor-vermelho);
     border: 1px solid var(--cor-vermelho);
     font: var(--fonte-descricao);
     font-size: 16px;

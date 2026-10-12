@@ -10,6 +10,12 @@
 :root{
     --cor-vermelho: #FF383C;
     --cor-fundo: #08090B;
+    --degrade-fundo: linear-gradient(
+        to bottom,
+        #08090B 0%,
+        #050506 60%,
+        #000000 100%
+    );
     --cor-titulo: #ffffff;
     --cor-descricao: #D1D3D6;
     --cor-vermelho-forte: #FF0000;
@@ -30,7 +36,7 @@ header{
     justify-content: space-between;
     align-items: center;
     height: 65px;
-    background-color: var(--cor-fundo);
+    background: var(--cor-fundo);
     position: fixed;
     top: 0;
     left: 0;
@@ -78,7 +84,7 @@ nav a:hover{
     padding: 10px;
     margin: 10px;
     border: none;
-    background-color: var(--cor-fundo);
+    background: var(--cor-fundo);
 }
 .btn-login a{
     color: var(--cor-titulo);
@@ -94,7 +100,7 @@ nav a:hover{
     padding: 10px;
     margin: 10px;
     border: none;
-    background-color: var(--cor-fundo);
+    background: var(--cor-fundo);
 }
 .btn-cadastro a{
     color: var(--cor-vermelho);
@@ -112,7 +118,8 @@ footer{
     height: 25vh;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--cor-fundo);
+    background: var(--degrade-fundo);
+    padding-bottom: 0.2%
 }
 
 .titulo-footer{
