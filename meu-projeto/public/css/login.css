@@ -1,0 +1,124 @@
+.home-login {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container-login {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.container-login img {
+    width: 40%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Película por cima da imagem */
+.container-login::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to left,
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0.4) 40%,
+        rgba(0, 0, 0, 1) 99%
+    );
+
+    z-index: 0;
+    pointer-events: none;
+}
+
+.conteudo-login {
+    position: absolute;
+    top: 80%;
+    left: 9%;
+    transform: translateY(-50%);
+
+    align-content: end;
+
+    z-index: 1;
+    color: white;
+}
+
+.conteudo-login h1 {
+    width: 40%;
+    font-size: 32px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.container-forms{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: var(--degrade-fundo);
+    inset: 0;
+    z-index: 1;
+}
+
+.titulo-forms{
+    margin-bottom: 8%;
+    margin-right: 10%;
+}
+
+.titulo-forms h2{
+    color: white;
+    font-size: 40px;
+}
+.titulo-forms p{
+    color: var(--cor-descricao);
+    font-size: 20px;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-right: 10%;
+}
+.formulario label{
+    display: block;
+    color: var(--cor-descricao);
+    margin: 8px 0px;
+    font-family: 'Inter', sans-serif;
+}
+
+input::placeholder{
+    text-align: left;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.formulario input{
+    width: 100%;
+    text-align: left;
+    padding: 10px 12px;
+    border-radius: 4px;
+    border: 1px solid #2C2C2C;
+    background: #2C2C2C;
+    color: white;
+    font-size: 16px;
+}
+
+.btn-entrar{
+    margin-top: 8%;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #D71920;
+    border: 1px solid #D71920;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.btn-entrar:hover{
+    transform: scale(1.1);
+}   
