@@ -70,11 +70,12 @@ nav li {
 nav a{
     color: var(--cor-titulo);
     font: var(--fonte-descricao);
-    transition: 0.2s ease-in-out;
+    display: inline-block;
+    transition: transform 0.2s ease, color 0.3s;
 }
 nav a:hover{
     color: var(--cor-vermelho);
-    transition: 0.4s;
+    transform: scale(1.08);
 }
 .btn-header{
     display: flex;
@@ -90,11 +91,12 @@ nav a:hover{
     color: var(--cor-titulo);
     font: var(--fonte-links);
     font-size: 16px;
-    transition: 0.2s ease-in-out;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 .btn-login a:hover{
     color: var(--cor-vermelho);
-    transition: 0.4s;
+    transform: scale(1.08);
 }
 .btn-cadastro{
     padding: 10px;
@@ -106,11 +108,12 @@ nav a:hover{
     color: var(--cor-vermelho);
     font: var(--fonte-links);
     font-size: 16px;
-    transition: 0.2s ease-in-out;
+    display: inline-block;
+    transition: transform 0.2s ease, color 0.3s ease;
 }
 .btn-cadastro a:hover{
     color: var(--cor-titulo);
-    transition: 0.4s;
+    transform: scale(1.08);
 }
 
 footer{

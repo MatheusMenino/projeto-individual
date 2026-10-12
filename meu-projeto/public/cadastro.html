@@ -1,124 +1,166 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/cadastro.css" />
+    <title>ALMA DA FIEL | CADASTRO</title>
+    <script src="./js/sessao.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>AquaTech | Cadastro</title>
-
-  <script src="./js/sessao.js"></script>
-
-  <link rel="stylesheet" href="./css/estilo.css" />
-  <link rel="icon" href="./assets/icon/favicon2.ico" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-</head>
-
-<body onload="listar()">
-  <!--header inicio-->
-  <div class="header">
-    <div class="container">
-      <h1 class="titulo">AquaTech</h1>
-      <ul class="navbar">
-        <li>
-          <a href="index.html">Inicial</a>
-        </li>
-        <li>
-          <a href="simulador.html">Simulador</a>
-        </li>
-        <li>|</li>
-        <li>
-          <a href="login.html">Login</a>
-        </li>
-        <li class="agora">
-          <a href="#">Cadastro</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <!--header fim-->
-
-  <div class="login">
-    <div class="alerta_erro">
-      <div class="card_erro" id="cardErro">
-        <span id="mensagem_erro"></span>
+  <body>
+    <header>
+      <div class="logo">
+        <picture>
+          <a href="#"
+            ><img
+              src="https://upload.wikimedia.org/wikipedia/commons/2/27/SCCorinthians_Paulista_1910.png?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original"
+              alt="logo-site"
+          /></a>
+        </picture>
+        <a href="#"
+          ><h1>ALMA DA <span>FIEL</span></h1></a
+        >
       </div>
-    </div>
-    <div class="container">
-      <div class="card card-cadastro">
-        <h2>Bem-vindo!</h2>
-        <div class="formulario">
-          <!--
-                         Para inserir mais um campo, copie uma das inputs abaixo.
-                         Assim que inserir vá para o script abaixo.
-                     -->
-          <div class="campo">
-            <span>Código de ativação:</span>
-            <input id="codigo_input" type="text" placeholder="Insira aqui seu código" />
-          </div>
-          <div class="campo">
-            <span>Nome:</span>
-            <input id="nome_input" type="text" placeholder="Seu nome" />
-          </div>
-          <div class="campo">
-            <span>E-mail:</span>
-            <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
-          </div>
-          <div class="campo">
-            <span>Senha:</span>
-            <input id="senha_input" type="password" placeholder="******" />
-          </div>
-          <div class="campo">
-            <span>Confirmação da Senha:</span>
-            <input id="confirmacao_senha_input" type="password" placeholder="******" />
-          </div>
-          <button class="botao" onclick="cadastrar()">Cadastrar</button>
-        </div>
-        <div id="div_aguardar" class="loading-div">
-          <img src="./assets/circle-loading.gif" id="loading-gif" />
-        </div>
 
-        <div id="div_erros_login"></div>
+      <nav>
+        <ul>
+          <li><a href="#secaoSobre">Sobre</a></li>
+          <li><a href="historia.html">História</a></li>
+          <li><a href="idolos.html">Ídolos</a></li>
+          <li><a href="gavioes.html">Gaviões da Fiel</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+        </ul>
+      </nav>
+
+      <div class="btn-header">
+        <button class="btn-login"><a href="login.html">Login</a></button>
+        <button class="btn-cadastro">
+          <a href="cadastro.html">Cadastro</a>
+        </button>
       </div>
-    </div>
-  </div>
+    </header>
 
-  <!--footer inicio-->
-  <div class="footer">
-    <div class="container">
-      <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023-2026</h4>
-    </div>
-  </div>
-  <!--footer fim-->
-</body>
+    <main>
+      <section class="home-cadastro">
+        <div class="container-cadastro">
+          <img src="assets/imgs/fundo-cadastro.jpg" alt="fundo-idolos" />
 
+          <div class="conteudo-cadastro">
+            <h1>AQUI, A PAIXÃO TEM LUGAR</h1>
+            <h2>Uma história que vive em cada torcedor</h2>
+            <p>
+              Das arquibancadas às memórias eternas. Faça parte de um espaço
+              dedicado à história, aos ídolos e à cultura do Timão.
+            </p>
+          </div>
+          <div class="container-forms">
+            <div class="titulo-forms">
+              <h2>Seu lugar na fiel</h2>
+              <p>Crie uma conta e viva essa história coma gente</p>
+            </div>
+            <div class="formulario">
+              <div class="campo">
+                <label for="ipt_nome">Nome Completo</label>
+                <input
+                  type="text"
+                  id="ipt_nome"
+                  placeholder="Como você se chama?"
+                />
+                <div class="campo">
+                  <label for="ipt_email">E-mail</label>
+                  <input
+                    type="text"
+                    id="ipt_email"
+                    type="email"
+                    placeholder="exemplo@email.com"
+                  />
+                </div>
+              </div>
+              <div class="campo">
+                <label for="ipt_senha">Senha</label>
+                <input type="password" id="ipt_senha" placeholder="********" />
+              </div>
+              <div class="campo">
+                <label for="ipt_confirmar_senha">Confirmar senha</label>
+                <input type="password" id="ipt_confirmar_senha" placeholder="*******"/>
+              </div>
+
+              <button class="btn-criar" onclick="cadastrar()">
+                Criar minha conta →
+              </button>
+
+              <a href="login.html">Já possui uma conta? Entrar</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="titulo-footer">
+        <h2>ALMA DA <span>FIEL</span></h2>
+        <p>Uma história que vive em cada torcedor</p>
+      </div>
+
+      <div class="nav-footer">
+        <h3>Navegação</h3>
+        <ul>
+          <li><a href="#secaoSobre">Sobre</a></li>
+          <li><a href="historia.html">História</a></li>
+          <li><a href="#">Ídolos</a></li>
+          <li><a href="gavioes.html">Gaviões da Fiel</a></li>
+          <li><a href="#">Quiz</a></li>
+        </ul>
+      </div>
+
+      <div class="siga-me">
+        <h3>Follow me</h3>
+        <div class="icon-footer">
+          <a
+            href="https://github.com/MatheusMenino/MatheusMenino"
+            target="_blank"
+            ><img src="assets/icon/github.png" alt="github" />Github</a
+          >
+
+          <a href="https://www.linkedin.com/in/matheusmenino/" target="_blank"
+            ><img src="assets/icon/linkedin.png" alt="linkedin" />Linkedin</a
+          >
+        </div>
+
+        <div class="copy-footer">
+          <p>© 2026 ALMA DA FIEL | MATHEUS MENINO</p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
 
 <script>
-
-  // Array para armazenar empresas cadastradas para validação de código de ativação 
-  let listaEmpresasCadastradas = [];
+  // // Array para armazenar empresas cadastradas para validação de código de ativação
+  // let listaEmpresasCadastradas = [];
 
   function cadastrar() {
     // aguardar();
 
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
-    var nomeVar = nome_input.value;
-    var emailVar = email_input.value;
-    var senhaVar = senha_input.value;
-    var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    var codigoVar = codigo_input.value;
-    var idEmpresaVincular
+    var nomeVar = ipt_nome.value;
+    var emailVar = ipt_email.value;
+    var senhaVar = ipt_senha.value;
+    var confirmacaoSenhaVar = ipt_confirmar_senha.value;
+    // var codigoVar = codigo_input.value;
+    // var idEmpresaVincular
 
     // Verificando se há algum campo em branco
     if (
       nomeVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
-      confirmacaoSenhaVar == "" ||
-      codigoVar == ""
+      confirmacaoSenhaVar == "" || 
+      senhaVar != confirmacaoSenhaVar
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
@@ -130,18 +172,18 @@
       setInterval(sumirMensagem, 5000);
     }
 
-    // Verificando se o código de ativação é de alguma empresa cadastrada
-    for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
-      if (listaEmpresasCadastradas[i].codigo_ativacao == codigoVar) {
-        idEmpresaVincular = listaEmpresasCadastradas[i].id
-        console.log("Código de ativação válido.");
-        break;
-      } else {
-        cardErro.style.display = "block";
-        mensagem_erro.innerHTML = "(Mensagem de erro para código inválido)";
-        finalizarAguardar();
-      }
-    }
+    // // Verificando se o código de ativação é de alguma empresa cadastrada
+    // for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
+    //   if (listaEmpresasCadastradas[i].codigo_ativacao == codigoVar) {
+    //     idEmpresaVincular = listaEmpresasCadastradas[i].id
+    //     console.log("Código de ativação válido.");
+    //     break;
+    //   } else {
+    //     cardErro.style.display = "block";
+    //     mensagem_erro.innerHTML = "(Mensagem de erro para código inválido)";
+    //     finalizarAguardar();
+    //   }
+    // }
 
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
@@ -155,7 +197,7 @@
         nomeServer: nomeVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
-        idEmpresaVincularServer: idEmpresaVincular
+        // idEmpresaVincularServer: idEmpresaVincular
       }),
     })
       .then(function (resposta) {
@@ -185,25 +227,25 @@
     return false;
   }
 
-  // Listando empresas cadastradas 
-  function listar() {
-    fetch("/empresas/listar", {
-      method: "GET",
-    })
-      .then(function (resposta) {
-        resposta.json().then((empresas) => {
-          empresas.forEach((empresa) => {
-            listaEmpresasCadastradas.push(empresa);
+  // // Listando empresas cadastradas
+  // function listar() {
+  //   fetch("/empresas/listar", {
+  //     method: "GET",
+  //   })
+  //     .then(function (resposta) {
+  //       resposta.json().then((empresas) => {
+  //         empresas.forEach((empresa) => {
+  //           listaEmpresasCadastradas.push(empresa);
 
-            console.log("listaEmpresasCadastradas")
-            console.log(listaEmpresasCadastradas[0].codigo_ativacao)
-          });
-        });
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-      });
-  }
+  //           console.log("listaEmpresasCadastradas")
+  //           console.log(listaEmpresasCadastradas[0].codigo_ativacao)
+  //         });
+  //       });
+  //     })
+  //     .catch(function (resposta) {
+  //       console.log(`#ERRO: ${resposta}`);
+  //     });
+  // }
 
   function sumirMensagem() {
     cardErro.style.display = "none";

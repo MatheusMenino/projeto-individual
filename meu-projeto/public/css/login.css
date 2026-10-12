@@ -65,7 +65,7 @@
 }
 
 .titulo-forms{
-    margin-bottom: 8%;
+    margin-bottom: 4%;
     margin-right: 10%;
 }
 
@@ -109,8 +109,8 @@ input::placeholder{
 }
 
 .btn-entrar{
-    margin-top: 8%;
-    padding: 8px;
+    margin-top: 6%;
+    padding: 12px;
     border-radius: 4px;
     background-color: #D71920;
     border: 1px solid #D71920;
@@ -120,5 +120,16 @@ input::placeholder{
 }
 
 .btn-entrar:hover{
-    transform: scale(1.1);
+    transform: scale(1.06);
 }   
+
+.formulario a{
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+    color: var(--cor-descricao);
+    transition: transform 0.4s ease-in-out;
+}
+.formulario a:hover{
+    transform: scale(1.05);
+}
