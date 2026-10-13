@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/quiz.css" />
+    <title>ALMA DA FIEL | QUIZ</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <picture>
+          <a href="index.html"
+            ><img
+              src="https://upload.wikimedia.org/wikipedia/commons/2/27/SCCorinthians_Paulista_1910.png?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original"
+              alt="logo-site"
+          /></a>
+        </picture>
+        <a href="index.html"
+          ><h1>ALMA DA <span>FIEL</span></h1></a
+        >
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html#secaoSobre">Sobre</a></li>
+          <li><a href="historia.html">História</a></li>
+          <li><a href="idolos.html">Ídolos</a></li>
+          <li><a href="gavioes.html">Gaviões da Fiel</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+        </ul>
+      </nav>
+
+      <div class="btn-header">
+        <button class="btn-login"><a href="login.html">Login</a></button>
+        <button class="btn-cadastro">
+          <a href="cadastro.html">Cadastro</a>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="home-quiz">
+        <div class="container-quiz">
+          <div class="conteudo-quiz">
+            <div class="titulo-quiz">
+              <h1>QUIZ DA FIEL</h1>
+            </div>
+            <div class="enunciado">
+              <p>Questao: <span id="spanNumeroDaQuestaoAtual"></span></p>
+              <h2 id="spanQuestaoExibida"></h2>
+            </div>
+          </div>
+          <div class="container-opcoes" id="opcoes">
+            <div class="opcao">
+              <input
+                type="radio"
+                id="primeiraOpcao"
+                name="option"
+                value="alternativaA"
+              />
+              <label for="primeiraOpcao" id="labelOpcaoUm"></label>
+            </div>
+
+            <div class="opcao">
+              <input
+                type="radio"
+                id="segundaOpcao"
+                name="option"
+                value="alternativaB"
+              />
+              <label for="segundaOpcao" id="labelOpcaoDois"></label>
+            </div>
+
+            <div class="opcao">
+              <input
+                type="radio"
+                id="terceiraOpcao"
+                name="option"
+                value="alternativaC"
+              />
+              <label for="terceiraOpcao" id="labelOpcaoTres"></label>
+            </div>
+
+            <div class="opcao">
+              <input
+                type="radio"
+                id="quartaOpcao"
+                name="option"
+                value="alternativaD"
+              />
+              <label for="quartaOpcao" id="labelOpcaoQuatro"></label>
+            </div>
+          </div>
+          <button class="btn-avancar" onclick="avancar()" id="btnAvancar">
+            Responder
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="titulo-footer">
+        <h2>ALMA DA <span>FIEL</span></h2>
+        <p>Uma história que vive em cada torcedor</p>
+      </div>
+
+      <div class="nav-footer">
+        <h3>Navegação</h3>
+        <ul>
+          <li><a href="index.html#secaoSobre">Sobre</a></li>
+          <li><a href="historia.html">História</a></li>
+          <li><a href="idolos.html">Ídolos</a></li>
+          <li><a href="gavioes.html">Gaviões da Fiel</a></li>
+          <li><a href="#">Quiz</a></li>
+        </ul>
+      </div>
+
+      <div class="siga-me">
+        <h3>Follow me</h3>
+        <div class="icon-footer">
+          <a
+            href="https://github.com/MatheusMenino/MatheusMenino"
+            target="_blank"
+            ><img src="assets/icon/github.png" alt="github" />Github</a
+          >
+
+          <a href="https://www.linkedin.com/in/matheusmenino/" target="_blank"
+            ><img src="assets/icon/linkedin.png" alt="linkedin" />Linkedin</a
+          >
+        </div>
+
+        <div class="copy-footer">
+          <p>© 2026 ALMA DA FIEL | MATHEUS MENINO</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+<script>
+  const listaDeQuestoes = [
+    {
+      pergunta: "Qual o mascote do Corinthians?",
+      alternativaA: "Gavião",
+      alternativaB: "Operário",
+      alternativaC: "Mosqueteiro",
+      alternativaD: "São Jorge",
+      alternativaCorreta: "alternativaC",
+    },
+
+    {
+      pergunta: "Qual jogador marcou o gol do titulo do Mundial de 2012?",
+      alternativaA: "Emerson Sheik",
+      alternativaB: "Danilo",
+      alternativaC: "Paulinho",
+      alternativaD: "Paolo Guerrero",
+      alternativaCorreta: "alternativaD",
+    },
+
+    {
+      pergunta: "Qual é o nome do estádio do Corinthians?",
+      alternativaA: "Neo Química Arena",
+      alternativaB: "Estádio do Pacaembu",
+      alternativaC: "Itaquerão",
+      alternativaD: "Morumbi",
+      alternativaCorreta: "alternativaA",
+    },
+    {
+      pergunta: "Qual é o principal rival do Corinthians?",
+      alternativaA: "Flamengo",
+      alternativaB: "São Paulo",
+      alternativaC: "Porco",
+      alternativaD: "Santos",
+      alternativaCorreta: "alternativaC",
+    },
+    {
+      pergunta: "Quem é o maior artilheiro do estádio do Corinthians?",
+      alternativaA: "Angel Romero",
+      alternativaB: "Vagner Love",
+      alternativaC: "Roger Guedes",
+      alternativaD: "Yuri Alberto",
+      alternativaCorreta: "alternativaD",
+    },
+    {
+      pergunta: "Quem é conhecido na hisória Alvinegra como `Pé de Anjo` ",
+      alternativaA: "Neto",
+      alternativaB: "Jadson",
+      alternativaC: "Marcelinho Carioca",
+      alternativaD: "Rivelino",
+      alternativaCorreta: "alternativaC",
+    },
+    {
+      pergunta: "Quem é o maior artilheiro da história do Corinthians?",
+      alternativaA: "Baltazar",
+      alternativaB: "Teleco",
+      alternativaC: "Cláudio de Pinho",
+      alternativaD: "Marcelinho Carioca",
+      alternativaCorreta: "alternativaC",
+    },
+    {
+      pergunta: "Contra qual equipe o Corinthians conquistou seu primeiro título do Campeonato Brasileiro em 1990?",
+      alternativaA: "Porco",
+      alternativaB: "Santos",
+      alternativaC: "Cruzeiro",
+      alternativaD: "São Paulo",
+      alternativaCorreta: "alternativaD",
+    },
+    {
+      pergunta: "Quem é o goleiro que mais vezes vestiu a camisa do Corinthians na história?",
+      alternativaA: "Ronaldo Giovanelli",
+      alternativaB: "Cássio",
+      alternativaC: "Gilmar dos Santos Neves",
+      alternativaD: "Dida",
+      alternativaCorreta: "alternativaB",
+    },
+    {
+      pergunta: "Contra qual adversário o Corinthians disputou a final na conquista do seu primeiro Mundial de Clubes da FIFA, no ano de 2000?",
+      alternativaA: "Real Madrid",
+      alternativaB: "Boca Juniors",
+      alternativaC: "Vasco da Gama",
+      alternativaD: "Manchester United",
+      alternativaCorreta: "alternativaC",
+    },
+  ];
+
+  // variáveis globais
+  let respostaEnviada = false;
+  let numeroDaQuestaoAtual = 0;
+  let pontuacaoFinal = 0;
+  let tentativaIncorreta = 0;
+  let certas = 0;
+  let erradas = 0;
+  let quantidadeDeQuestoes = listaDeQuestoes.length;
+  // let isUltima = numeroDaQuestaoAtual == quantidadeDeQuestoes-1 ? true : false
+
+  function onloadEsconder() {
+    document.getElementById("pontuacao").style.display = "none";
+    document.getElementById("jogo").style.display = "none";
+  }
+
+  function iniciarQuiz() {
+    document.getElementById("pontuacao").style.display = "flex";
+    document.getElementById("jogo").style.display = "flex";
+    document.getElementById("btnIniciarQuiz").style.display = "none";
+
+    document.getElementById("qtdQuestoes").innerHTML = quantidadeDeQuestoes;
+
+    preencherHTMLcomQuestaoAtual(0);
+
+    btnSubmeter.disabled = false;
+    btnProx.disabled = true;
+    // btnConcluir.disabled = true
+    btnTentarNovamente.disabled = true;
+  }
+
+  function preencherHTMLcomQuestaoAtual(index) {
+    habilitarAlternativas(true);
+    const questaoAtual = listaDeQuestoes[index];
+    numeroDaQuestaoAtual = index;
+    console.log("questaoAtual");
+    console.log(questaoAtual);
+    document.getElementById("spanNumeroDaQuestaoAtual").innerHTML =
+      Number(index) + 1; // ajustando porque o index começa em 0
+    document.getElementById("spanQuestaoExibida").innerHTML =
+      questaoAtual.pergunta;
+    document.getElementById("labelOpcaoUm").innerHTML =
+      questaoAtual.alternativaA;
+    document.getElementById("labelOpcaoDois").innerHTML =
+      questaoAtual.alternativaB;
+    document.getElementById("labelOpcaoTres").innerHTML =
+      questaoAtual.alternativaC;
+    document.getElementById("labelOpcaoQuatro").innerHTML =
+      questaoAtual.alternativaD;
+  }
+
+  function submeter() {
+    if (respostaEnviada === true) {
+      return;
+    }
+    const options = document.getElementsByName("option"); // recupera alternativas no html
+
+    let respostaSelecionada = null;
+
+    for (let i = 0; i < options.length; i++) {
+      if (options[i].checked) {
+        respostaSelecionada = options[i];
+        break;
+      }
+    }
+
+    if (respostaSelecionada === null) {
+      alert("Não há alternativas escolhidas. Escolha uma opção.");
+      return;
+    }
+
+    habilitarAlternativas(false);
+    checarResposta();
+
+    respostaEnviada = true;
+    document.getElementById("btnAvancar").innerHTML = "Próxima questão";
+  }
+
+  function habilitarAlternativas(trueOrFalse) {
+    let opcaoEscolhida = trueOrFalse ? false : true;
+
+    primeiraOpcao.disabled = opcaoEscolhida;
+    segundaOpcao.disabled = opcaoEscolhida;
+    terceiraOpcao.disabled = opcaoEscolhida;
+    quartaOpcao.disabled = opcaoEscolhida;
+  }
+
+  function avancar() {
+    if (respostaEnviada === false) {
+      submeter();
+      return;
+    }
+
+    if (numeroDaQuestaoAtual < quantidadeDeQuestoes - 1) {
+      numeroDaQuestaoAtual++;
+
+      limparCoresBackgroundOpcoes();
+      desmarcarRadioButtons();
+
+      respostaEnviada = false;
+
+      preencherHTMLcomQuestaoAtual(numeroDaQuestaoAtual);
+
+      document.getElementById("btnAvancar").innerHTML = "Responder";
+    } else {
+      alert("Você terminou o quiz!");
+    }
+  }
+
+  function tentarNovamente() {
+    // atualiza a página
+    window.location.reload();
+  }
+
+  function checarResposta() {
+    const questaoAtual = listaDeQuestoes[numeroDaQuestaoAtual]; // questão atual
+    const respostaQuestaoAtual = questaoAtual.alternativaCorreta; // qual é a resposta correta da questão atual
+
+    const options = document.getElementsByName("option"); // recupera alternativas no html
+
+    let alternativaCorreta = null; // variável para armazenar a alternativa correta
+
+    options.forEach((option) => {
+      if (option.value === respostaQuestaoAtual) {
+        alternativaCorreta = document.querySelector(
+          `label[for="${option.id}"]`,
+        ).id;
+      }
+    });
+
+    // verifica se resposta assinalada é correta
+    options.forEach((option) => {
+      if (option.checked === true && option.value === respostaQuestaoAtual) {
+        document
+          .getElementById(alternativaCorreta)
+          .classList.add("text-success-with-bg");
+        pontuacaoFinal++;
+        certas++;
+        // document.getElementById("spanCertas").innerHTML = certas;
+      } else if (option.checked && option.value !== respostaQuestaoAtual) {
+        const wrongLabelId = option.labels[0].id;
+
+        document
+          .getElementById(wrongLabelId)
+          .classList.add("text-danger-with-bg");
+        document
+          .getElementById(alternativaCorreta)
+          .classList.add("text-success-with-bg");
+        tentativaIncorreta++;
+        erradas++;
+        // document.getElementById("spanErradas").innerHTML = erradas;
+      }
+    });
+  }
+
+  function limparCoresBackgroundOpcoes() {
+    const options = document.getElementsByName("option");
+    options.forEach((option) => {
+      document
+        .getElementById(option.labels[0].id)
+        .classList.remove("text-danger-with-bg");
+      document
+        .getElementById(option.labels[0].id)
+        .classList.remove("text-success-with-bg");
+    });
+  }
+
+  function desmarcarRadioButtons() {
+    const options = document.getElementsByName("option");
+    for (let i = 0; i < options.length; i++) {
+      options[i].checked = false;
+    }
+  }
+
+  function finalizarJogo() {
+    let textoParaMensagemFinal = null;
+    let classComCoresParaMensagemFinal = null;
+    const porcentagemFinalDeAcertos = pontuacaoFinal / quantidadeDeQuestoes;
+
+    if (porcentagemFinalDeAcertos <= 0.3) {
+      textoParaMensagemFinal = "Parece que você não estudou...";
+      classComCoresParaMensagemFinal = "text-danger-with-bg";
+    } else if (
+      porcentagemFinalDeAcertos > 0.3 &&
+      porcentagemFinalDeAcertos < 0.9
+    ) {
+      textoParaMensagemFinal = "Pode melhorar na próxima, hein!";
+      classComCoresParaMensagemFinal = "text-warning-with-bg";
+    } else if (porcentagemFinalDeAcertos >= 0.9) {
+      textoParaMensagemFinal = "Uau, parabéns!";
+      classComCoresParaMensagemFinal = "text-success-with-bg";
+    }
+
+    textoParaMensagemFinal +=
+      "<br> Você acertou " +
+      Math.round(porcentagemFinalDeAcertos * 100) +
+      "% das questões.";
+
+    document.getElementById("msgFinal").innerHTML = textoParaMensagemFinal;
+    document
+      .getElementById("msgFinal")
+      .classList.add(classComCoresParaMensagemFinal);
+    document.getElementById("spanPontuacaoFinal").innerHTML = pontuacaoFinal;
+
+    document.getElementById("jogo").classList.add("text-new-gray");
+
+    btnProx.disabled = true;
+    btnSubmeter.disabled = true;
+    // btnConcluir.disabled = true
+    btnTentarNovamente.disabled = false;
+  }
+  preencherHTMLcomQuestaoAtual(0);
+</script>
