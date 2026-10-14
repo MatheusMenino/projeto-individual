@@ -234,25 +234,25 @@
   let quantidadeDeQuestoes = listaDeQuestoes.length;
   // let isUltima = numeroDaQuestaoAtual == quantidadeDeQuestoes-1 ? true : false
 
-  function onloadEsconder() {
-    document.getElementById("pontuacao").style.display = "none";
-    document.getElementById("jogo").style.display = "none";
-  }
+  // function onloadEsconder() {
+  //   document.getElementById("pontuacao").style.display = "none";
+  //   document.getElementById("jogo").style.display = "none";
+  // }
 
-  function iniciarQuiz() {
-    document.getElementById("pontuacao").style.display = "flex";
-    document.getElementById("jogo").style.display = "flex";
-    document.getElementById("btnIniciarQuiz").style.display = "none";
+  // function iniciarQuiz() {
+  //   document.getElementById("pontuacao").style.display = "flex";
+  //   document.getElementById("jogo").style.display = "flex";
+  //   document.getElementById("btnIniciarQuiz").style.display = "none";
 
-    document.getElementById("qtdQuestoes").innerHTML = quantidadeDeQuestoes;
+  //   document.getElementById("qtdQuestoes").innerHTML = quantidadeDeQuestoes;
 
-    preencherHTMLcomQuestaoAtual(0);
+  //   preencherHTMLcomQuestaoAtual(0);
 
-    btnSubmeter.disabled = false;
-    btnProx.disabled = true;
-    // btnConcluir.disabled = true
-    btnTentarNovamente.disabled = true;
-  }
+  //   btnSubmeter.disabled = false;
+  //   btnProx.disabled = true;
+  //   // btnConcluir.disabled = true
+  //   btnTentarNovamente.disabled = true;
+  // }
 
   function preencherHTMLcomQuestaoAtual(index) {
     habilitarAlternativas(true);
@@ -282,12 +282,22 @@
 
     let respostaSelecionada = null;
 
-    for (let i = 0; i < options.length; i++) {
-      if (options[i].checked) {
-        respostaSelecionada = options[i];
+    let i=0;
+
+    while(i < options.length){
+      if( options[i].checked){
+        respostaSelecionada = options[i]
         break;
       }
+      i++;
     }
+
+    // for (let i = 0; i < options.length; i++) {
+    //   if (options[i].checked) {
+    //     respostaSelecionada = options[i];
+    //     break;
+    //   }
+    // }
 
     if (respostaSelecionada === null) {
       alert("Não há alternativas escolhidas. Escolha uma opção.");
@@ -328,14 +338,17 @@
 
       document.getElementById("btnAvancar").innerHTML = "Responder";
     } else {
-      alert("Você terminou o quiz!");
+      sessionStorage.setItem("pontuacaoFinal", pontuacaoFinal);
+      sessionStorage.setItem("quantidadeDeQuestoes", quantidadeDeQuestoes);
+
+      window.location.href = "resultado.html";
     }
   }
 
-  function tentarNovamente() {
-    // atualiza a página
-    window.location.reload();
-  }
+  // function tentarNovamente() {
+  //   // atualiza a página
+  //   window.location.reload();
+  // }
 
   function checarResposta() {
     const questaoAtual = listaDeQuestoes[numeroDaQuestaoAtual]; // questão atual

@@ -1,0 +1,87 @@
+.container-pai{
+    display: flex;
+    flex-direction: column;
+    background: var(--degrade-fundo);
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-resultado{
+    display: flex;
+    flex-direction: column;
+    background: var(--cor-fundo);
+    width: 60%;
+    height: 80%;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 5%;
+}
+.container-medalha{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5%;
+    padding-bottom: 2%;
+}
+.container-medalha img{
+    width: 120px;
+    height: auto;
+}
+
+.container-mensagem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-mensagem h2{
+    font-size: 32px;
+    padding: 12px 0px 32px 0px;
+    color: var(--cor-titulo);
+}
+
+.container-mensagem h3{
+    font-size: 22px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    color: var(--cor-titulo);
+}
+
+.container-mensagem p{
+    font-size: 18px;
+    color: var(--cor-descricao);
+    margin-top: 5%;
+}
+
+
+.btn-resultado {
+    padding: 10px 24px;
+    margin-top: 40px;
+    border: none;
+    border-radius: 6px;
+    background: var(--cor-vermelho);
+    color: white;
+    font-family: var(--fonte-descricao);
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.btn-resultado:hover {
+    transform: scale(1.03);
+}
+
+.container-mensagem a {
+    margin-top: 5px;
+    color: var(--cor-descricao);
+    font-family: var(--fonte-descricao);
+    font-size: 15px;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.container-mensagem a:hover {
+    color: var(--cor-vermelho);
+    text-decoration: underline;
+}
