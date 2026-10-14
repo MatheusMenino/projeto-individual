@@ -22,10 +22,10 @@ function executar(instrucao, valores = []) {
         conexao.query(instrucao, valores, function (erro, resultados) {
             conexao.end();
             if (erro) {
-                reject(erro);
+                return reject(erro);
             }
             console.log(resultados);
-            resolve(resultados);
+            return resolve(resultados);
         });
         conexao.on('error', function (erro) {
             return ("ERRO NO MySQL SERVER: ", erro.sqlMessage);
