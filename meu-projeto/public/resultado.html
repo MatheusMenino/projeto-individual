@@ -54,6 +54,7 @@
 
             <button class="btn-resultado" onclick="refazerQuiz()">Jogar novamente</button>
             <a href="index.html">Voltar ao ínicio</a>
+            <a href="dashboard.html">Visualizar desempenho</a>
           </div>
         </div>
        </section>
@@ -117,9 +118,9 @@ function carregarResultado() {
     return;
   }
 
-  const acertos = Number(pontuacaoFinal);
-  const total = Number(quantidadeDeQuestoes);
-  const porcentagem = (acertos / total) * 100;
+  let acertos = Number(pontuacaoFinal);
+  let total = Number(quantidadeDeQuestoes);
+  let porcentagem = (acertos / total) * 100;
 
   // Exibe a pontuação
   elementoPontuacao.innerHTML = `${acertos}/${total} ACERTOS`;
