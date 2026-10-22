@@ -73,6 +73,13 @@
     font-size: 16px;
 }
 
+.btn-home:hover{
+    transition: 0.4s ease;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+
 .btn-home a{
     color: var(--cor-titulo);
 }

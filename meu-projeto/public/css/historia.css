@@ -3,6 +3,7 @@
     overflow: hidden;
 }
 
+
 .container-historia {
     position: relative;
     width: 100%;
@@ -239,5 +240,5 @@
 }
 
 .btn-final:hover{
-    transform: scale(1.03);
+    transform: scale(1.05);
 }
