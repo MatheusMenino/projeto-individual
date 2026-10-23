@@ -127,7 +127,7 @@
 <script>  
   // b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
-  let proximaAtualizacao;
+  // let proximaAtualizacao;
 
   // window.onload = exibirAquariosDoUsuario();
 
@@ -160,16 +160,16 @@
   //   }
   // }
 
-  function alterarTitulo(idAquario) {
-    var tituloAquario = document.getElementById(`tituloAquario${idAquario}`);
-    var descricao = JSON.parse(sessionStorage.AQUARIOS).find(
-      (item) => item.id == idAquario,
-    ).descricao;
-    tituloAquario.innerHTML =
-      "Últimas medidas do <span style='color: #e6005a'>" +
-      descricao +
-      "</span>";
-  }
+  // function alterarTitulo(idAquario) {
+  //   var tituloAquario = document.getElementById(`tituloAquario${idAquario}`);
+  //   var descricao = JSON.parse(sessionStorage.AQUARIOS).find(
+  //     (item) => item.id == idAquario,
+  //   ).descricao;
+  //   tituloAquario.innerHTML =
+  //     "Últimas medidas do <span style='color: #e6005a'>" +
+  //     descricao +
+  //     "</span>";
+  // }
 
   // function exibirAquario(idAquario) {
   //   let todosOsGraficos = JSON.parse(sessionStorage.AQUARIOS);
@@ -218,32 +218,32 @@
 
   //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
   //     Para ajustar o "select", ajuste o comando sql em src/models
-  function obterDadosGrafico(idAquario) {
-    alterarTitulo(idAquario);
+  // function obterDadosGrafico(idAquario) {
+  //   alterarTitulo(idAquario);
 
-    if (proximaAtualizacao != undefined) {
-      clearTimeout(proximaAtualizacao);
-    }
+  //   if (proximaAtualizacao != undefined) {
+  //     clearTimeout(proximaAtualizacao);
+  //   }
 
-    fetch(`/medidas/ultimas/${idAquario}`, { cache: "no-store" })
-      .then(function (response) {
-        if (response.ok) {
-          response.json().then(function (resposta) {
-            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-            resposta.reverse();
+  //   fetch(`/medidas/ultimas/${idAquario}`, { cache: "no-store" })
+  //     .then(function (response) {
+  //       if (response.ok) {
+  //         response.json().then(function (resposta) {
+  //           console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+  //           resposta.reverse();
 
-            plotarGrafico(resposta, idAquario);
-          });
-        } else {
-          console.error("Nenhum dado encontrado ou erro na API");
-        }
-      })
-      .catch(function (error) {
-        console.error(
-          `Erro na obtenção dos dados p/ gráfico: ${error.message}`,
-        );
-      });
-  }
+  //           plotarGrafico(resposta, idAquario);
+  //         });
+  //       } else {
+  //         console.error("Nenhum dado encontrado ou erro na API");
+  //       }
+  //     })
+  //     .catch(function (error) {
+  //       console.error(
+  //         `Erro na obtenção dos dados p/ gráfico: ${error.message}`,
+  //       );
+  //     });
+  // }
 
   // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
   // Configura o gráfico (cores, tipo, etc), materializa-o na página e,
