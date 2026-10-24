@@ -338,10 +338,39 @@
 
       document.getElementById("btnAvancar").innerHTML = "Responder";
     } else {
-      sessionStorage.setItem("pontuacaoFinal", pontuacaoFinal);
-      sessionStorage.setItem("quantidadeDeQuestoes", quantidadeDeQuestoes);
+      var idUsuario = sessionStorage.ID_USUARIO;
 
-      window.location.href = "resultado.html";
+      if(ID_USUARIO == undefined){
+        alertr("Faça login para salvar seu resultado.");
+        window.location.href = "login.html";
+        return;
+      }
+
+      fetch("/usuarios/salvarResultado", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body:JSON.stringify({
+          fkUsuario:idUsuario, 
+          aceros:pontuacaoFinal,
+          erros:erradas,
+          totalPerguntas: quantidadeDeQuestoes
+        })
+      })
+      .then(function(resposta){
+        if(resposta.ok){
+          sessionStorage.setItem("pontuacaoFinal", pontuacaoFinal);
+          sessionStorage.setItem("quantidadeDeQuestoes", quantidadeDeQuestoes);
+          window.location.href = "resultado.html";
+        }else{
+          alert("Não foi possível salvar o resultado.");
+        }
+      })
+      .catch(function(erro){
+        console.log(erro);
+        alert("Erro ao conectar com o servidor")
+      });
     }
   }
 
