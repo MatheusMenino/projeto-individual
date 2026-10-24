@@ -1,4 +1,5 @@
-var database = require("../database/config")
+var database = require("../database/config");
+const { stack } = require("../routes/usuarios");
 
 function autenticar(email, senha) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ", email, senha)
@@ -22,7 +23,16 @@ function cadastrar(nome, email, senha) {
     return database.executar(instrucaoSql, [nome, email,senha]);
 }
 
+function salvarResultado(fkUsuario, acertos, erros, totalPerguntas){
+    var instrucaoSql = `
+    INSERT INTO resultadoQuiz (fkUsuario, acertos, erros, totalPerguntas) VALUES (?, ?, ?, ?);
+    `;
+    console.log("Executando a instrucao SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql, [fkUsuario, acertos, erros, totalPerguntas]);
+};
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    salvarResultado
 };
