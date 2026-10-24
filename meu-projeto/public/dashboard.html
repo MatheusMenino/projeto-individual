@@ -60,17 +60,17 @@
             <div class="indicadores">
               <div class="indicador">
                 <p class="indicador-titulo">Tentativas</p>
-                <span class="indicador-valor">3</span>
+                <span class="indicador-valor" id="totalTentativas">0</span>
               </div>
 
               <div class="indicador">
                 <p class="indicador-titulo">Total de acertos</p>
-                <span class="indicador-valor">22</span>
+                <span class="indicador-valor" id="totalAcertos">0</span>
               </div>
 
               <div class="indicador">
                 <p class="indicador-titulo">Aproveitamento</p>
-                <span class="indicador-valor">73,3%</span>
+                <span class="indicador-valor" id="aproveitamento">0%</span>
               </div>
             </div>
           </div>
@@ -124,7 +124,7 @@
   </body>
 </html>
 
-<script>  
+<script>
   // b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
   // let proximaAtualizacao;
@@ -247,6 +247,55 @@
 
   // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
   // Configura o gráfico (cores, tipo, etc), materializa-o na página e,
+
+  function carregarDashboard() {
+    var idUsuario = sessionStorage.ID_USUARIO;
+
+    if (idUsuario == undefined) {
+      alert("Faça login para acessar sua dashboard.");
+      window.location.href = "login.html";
+      return;
+    }
+
+    fetch("/usuarios/resultados/" + idUsuario)
+    .then(function(resposta){
+      if(!resposta.ok){
+        throw new error ("Erro ao buscar os resultados.");
+      }
+      return resposta.json();
+    })
+    .then(function(resultado){
+      let totalAcertos = 0;
+      let totalPerguntas = 0;
+      let labels = [];
+      let acertos = 0;
+      let erros = 0;
+
+      for(let i = 0; i < resultados.length; i++){
+        totalAcertos += Number(resultados[i].acertos);
+        totalPerguntas += Number(resultado[i].totalPerguntas);
+
+        labels.push("Tentativa " + (i+1));
+        acertos.push(Number(resultado[i].acertos));
+        erros.push(Number(resultados[i].acertos))
+      }
+      document.getElementById("totalTentativas").innerHTML = resultados.length;
+      document.getElementById("totalAcertos").innerHTML = totalAcertos;
+      
+      let percentual = 0 
+      if(total > 0){
+        percentual = (totalAcertos / totalPerguntas) * 100;
+      }
+      document.getElementById("aproveitamento").innerHTML = percentual.toFixed(1).replace(".", ",") + "%";
+
+      plotarGrafico(labels, acertos, erros);
+    })
+    .catch(function(erro){
+      console.log(erro);
+      alert("Não foi possível carregar os dados da dashboard.");
+    });
+  }
+
   function plotarGrafico() {
     const canvas = document.getElementById("graficoTentativas");
     console.log("iniciando plotagem do gráfico...");
@@ -255,16 +304,16 @@
     let myChart = new Chart(canvas, {
       type: "bar",
       data: {
-        labels: ["Tentativa 1", "Tentativa 2", "Tentativa 3"],
+        labels: labels,
         datasets: [
           {
             label: "Acertos",
-            data: [7, 9, 6],
+            data: acertos,
             backgroundColor: "#424242",
           },
           {
             label: "Erros",
-            data: [3, 1, 4],
+            data: erros,
             backgroundColor: "#FF383C",
           },
         ],
@@ -289,7 +338,7 @@
       },
     });
   }
-  plotarGrafico();
+  carregarDashboard;
 
   // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
   // buscando a última medida inserida em tabela contendo as capturas,
