@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/global.css" />
     <link rel="stylesheet" href="css/resultado.css" />
+    <script src="js/sessao.js"></script>
     <title>ALMA DA FIEL | RESULTADO</title>
   </head>
   <body>
@@ -29,6 +30,7 @@
           <li><a href="idolos.html">Ídolos</a></li>
           <li><a href="gavioes.html">Gaviões da Fiel</a></li>
           <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
         </ul>
       </nav>
 
@@ -37,6 +39,12 @@
         <button class="btn-cadastro">
           <a href="cadastro.html">Cadastro</a>
         </button>
+        <div class="usuario-logado" style="display: none;">
+        <span class="nome-usuario"></span>
+        <button class="btn-sair" onclick="limparSessao()" title="Sair da conta">
+          <img src="assets/icon/sair.png" alt="Sair da conta">
+        </button>
+      </div>
       </div>
     </header>
 
@@ -73,7 +81,8 @@
           <li><a href="historia.html">História</a></li>
           <li><a href="idolos.html">Ídolos</a></li>
           <li><a href="gavioes.html">Gaviões da Fiel</a></li>
-          <li><a href="#">Quiz</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
         </ul>
       </div>
 

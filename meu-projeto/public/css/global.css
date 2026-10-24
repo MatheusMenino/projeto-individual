@@ -116,6 +116,53 @@ nav a:hover{
     transform: scale(1.08);
 }
 
+/* Área do usuário logado */
+.usuario-logado {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 10px;
+}
+
+/* Nome do usuário */
+.nome-usuario {
+    color: var(--cor-titulo);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Botão de sair */
+.btn-sair {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* Ícone de sair */
+.btn-sair img {
+    width: 23px;
+    height: 23px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+    color: white;
+    filter: brightness(0) saturate(100%)
+            invert(20%) sepia(99%)
+            saturate(6000%) hue-rotate(350deg)
+            brightness(105%) contrast(110%);
+
+}
+
+.btn-sair:hover img {
+    transform: scale(1.1);
+    
+}
+
+
 footer{
     display: flex;
     height: 25vh;
