@@ -16,4 +16,8 @@ router.post("/salvarResultado", function(req, res){
     usuarioController.salvarResultado(req, res);
 });
 
+router.get("/resultados/:idUsuario", function(req,res){
+    usuarioController.buscarResultados(req, res)
+}); // criando a rota para pegar (metodo get) as informações do usuario da session.storage
+
 module.exports = router;
