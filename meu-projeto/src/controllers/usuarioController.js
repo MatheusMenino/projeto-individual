@@ -1,4 +1,6 @@
+const { json } = require("express");
 var usuarioModel = require("../models/usuarioModel");
+const { bus } = require("nodemon/lib/utils");
 // var aquarioModel = require("../models/aquarioModel");
 
 function autenticar(req, res) {
@@ -95,8 +97,26 @@ function salvarResultado(req, res){
 
 }
 
+function buscarResultados(req, res){
+  var idUsuario = Number(req.params.idUsuario);
+
+  if(idUsuario <= 0 || isNaN(idUsuario)){
+    return res.status(400).send("ID do usuario inválido!!");
+  }
+
+  usuarioModel.buscarResultados(idUsuario)
+  .then(function(resultados){
+    res.json(resultados);
+  })
+  .catch(function(erro){
+    console.log("Erro ao buscar resultados", erro)
+    res.status(500).send("Erro ao buscar os resultados do quiz.")
+  })
+}
+
 module.exports = {
   autenticar,
   cadastrar,
-  salvarResultado
+  salvarResultado,
+  buscarResultados
 };
