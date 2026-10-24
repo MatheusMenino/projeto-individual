@@ -340,8 +340,8 @@
     } else {
       var idUsuario = sessionStorage.ID_USUARIO;
 
-      if(ID_USUARIO == undefined){
-        alertr("Faça login para salvar seu resultado.");
+      if(idUsuario == undefined){
+        alert("Faça login para salvar seu resultado.");
         window.location.href = "login.html";
         return;
       }
@@ -353,7 +353,7 @@
         },
         body:JSON.stringify({
           fkUsuario:idUsuario, 
-          aceros:pontuacaoFinal,
+          acertos:pontuacaoFinal,
           erros:erradas,
           totalPerguntas: quantidadeDeQuestoes
         })
