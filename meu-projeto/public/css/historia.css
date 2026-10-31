@@ -1,4 +1,4 @@
-.final-historia {
+.home-historia {
     height: 100vh;
     overflow: hidden;
 }
@@ -14,6 +14,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
+    object-position: center 70%;
     display: block;
 }
 
@@ -36,7 +38,7 @@
 
 .conteudo-historia {
     position: absolute;
-    top: 40%;
+    top: 60%;
     left: 15%;
     transform: translateY(-50%);
 
@@ -47,7 +49,7 @@
 .conteudo-historia h1 {
     width: 60%;
     font-size: 70px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     font-weight: 500;
 }
 
