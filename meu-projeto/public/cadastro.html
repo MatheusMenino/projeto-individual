@@ -31,7 +31,9 @@
           <li><a href="historia.html">História</a></li>
           <li><a href="idolos.html">Ídolos</a></li>
           <li><a href="gavioes.html">Gaviões da Fiel</a></li>
-          <li class="link-quiz"><a href="quiz.html" style="display: none;">Quiz</a></li>
+          <li class="link-quiz">
+            <a href="quiz.html" style="display: none">Quiz</a>
+          </li>
         </ul>
       </nav>
 
@@ -85,7 +87,11 @@
               </div>
               <div class="campo">
                 <label for="ipt_confirmar_senha">Confirmar senha</label>
-                <input type="password" id="ipt_confirmar_senha" placeholder="*******"/>
+                <input
+                  type="password"
+                  id="ipt_confirmar_senha"
+                  placeholder="*******"
+                />
               </div>
 
               <button class="btn-criar" onclick="cadastrar()">
@@ -93,6 +99,9 @@
               </button>
 
               <a href="login.html">Já possui uma conta? Entrar</a>
+              <div id="cardErro" style="display: none">
+                <p id="mensagem_erro"></p>
+              </div>
             </div>
           </div>
         </div>
@@ -112,7 +121,7 @@
           <li><a href="historia.html">História</a></li>
           <li><a href="idolos.html">Ídolos</a></li>
           <li><a href="gavioes.html">Gaviões da Fiel</a></li>
-          <li class ="link-quiz"><a href="#">Quiz</a></li>
+          <li class="link-quiz"><a href="#">Quiz</a></li>
         </ul>
       </div>
 
@@ -159,7 +168,7 @@
       nomeVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
-      confirmacaoSenhaVar == "" || 
+      confirmacaoSenhaVar == "" ||
       senhaVar != confirmacaoSenhaVar
     ) {
       cardErro.style.display = "block";
