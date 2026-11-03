@@ -56,8 +56,8 @@
 
 
 .btn-resultado {
-    padding: 10px 24px;
-    margin-top: 40px;
+    padding: 6px 16px;
+    margin-top: 10px;
     border: none;
     border-radius: 6px;
     background: var(--cor-vermelho);
@@ -73,7 +73,7 @@
 }
 
 .container-mensagem a {
-    margin-top: 5px;
+    margin-top: 10px;
     color: var(--cor-descricao);
     font-family: var(--fonte-descricao);
     font-size: 15px;
@@ -84,4 +84,12 @@
 .container-mensagem a:hover {
     color: var(--cor-vermelho);
     text-decoration: underline;
+}
+
+.container-links{
+    margin-top: 32px;
+}
+
+.container-links a{
+    padding: 0px 24px;
 }
