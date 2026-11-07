@@ -1,12 +1,19 @@
 create database almadafiel;
 use almadafiel;
 
-create table usuario(
-id INT PRIMARY KEY AUTO_INCREMENT,
-nome VARCHAR(50) NOT NULL,
-email VARCHAR (100) NOT NULL UNIQUE,
-senha VARCHAR (100) NOT NULL,
-CONSTRAINT chkEmail CHECK (email LIKE '%@%')
+CREATE TABLE usuario (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(50) NOT NULL,
+    dataCadastro DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE credenciais (
+    fkUsuario INT PRIMARY KEY,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    senha VARCHAR(100) NOT NULL,
+    FOREIGN KEY (fkUsuario)
+        REFERENCES usuario(id)
 );
 
 CREATE TABLE resultadoQuiz (
@@ -16,10 +23,7 @@ CREATE TABLE resultadoQuiz (
     erros INT NOT NULL,
     totalPerguntas INT NOT NULL,
     dataTentativa DATETIME DEFAULT CURRENT_TIMESTAMP,
-
     CONSTRAINT fkResultadoUsuario
         FOREIGN KEY (fkUsuario)
         REFERENCES usuario(id)
 );
-
-SELECT*FROM usuario;
