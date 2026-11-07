@@ -40,81 +40,94 @@
     transform: translateY(-50%);
 
     z-index: 1;
-    color: white;
+    color: var(--cor-titulo);
 }
 
 .conteudo-home h1 {
-    width: 60%;
-    font-size: 64px;
-    margin-bottom: 8px;
+    font-family: var(--fonte-titulo);
     font-weight: 600;
+    width: 60%;
+    letter-spacing: 2px;
+    line-height: 1.15;
+    text-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+    font-size: 68px;
+    margin-bottom: 12px;
 }
 
 .conteudo-home h2 {
+    font-family: var(--fonte-titulo);
     font-size: 26px;
     max-width: 310px;
-    line-height: 1.1;
-    font-weight: 300;
-    color: var(--cor-descricao);
-    padding-bottom: 4%;
+    line-height: 1.4;
+    font-weight: 500;
+    padding-bottom: 2%;
     letter-spacing: 2px;
+    color: var(--cor-descricao);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
 }
 .conteudo-home p{
-    width: 30%;
+    font-family: var(--fonte-descricao);
+    font-size: 16px;
     color: var(--cor-descricao);
+    line-height: 1.6;
+    font-weight: 400;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+    width: 30%;
 }
 
-
-.secao{
+.secao {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 5%;
     width: 100%;
-    height: 100%;
+    min-height: 85vh;
+    padding: 6% 12%;
+    box-sizing: border-box;
     background: var(--cor-fundo);
-    scroll-margin-top: 50px;
 }
 
-.conteudo-idolos{
+.conteudo-idolos {
     display: flex;
     flex-direction: column;
     width: 55%;
-    padding-top: 2%;
-    padding-left: 15%;
-    align-items: left;
 }
 
-.conteudo-idolos h2{
+.conteudo-idolos h2 {
+    font-family: var(--fonte-titulo);
+    font-weight: 500;
     color: var(--cor-titulo);
-    margin-bottom: 18px;
-    width: 65%;
+    margin-bottom: 12px;
     font-size: 40px;
-    letter-spacing: 0.5px;
 }
 
-.conteudo-idolos h3{
+.conteudo-idolos h3 {
+    font-family: var(--fonte-descricao);
     color: var(--cor-titulo);
-    margin-bottom: 18px;
-    width: 65%;
+    margin-bottom: 20px;
     font-size: 22px;
-    letter-spacing: 0.5px;
 }
 
-.conteudo-idolos p{
-    width: 98%;
-    font: var(--fonte-descricao);
+.conteudo-idolos p {
+    font-family: var(--fonte-descricao);
     color: var(--cor-descricao);
-    font-size: 20px;    
-    padding-bottom: 5%;
-    letter-spacing: 0.4px;
+    font-size: 18px;
+    line-height: 1.7;
+    letter-spacing: 0.3px;
 }
 
-
-.container-imagem{
+.container-imagem {
     width: 40%;
-    padding-top: 10%;
-    padding-bottom: 5%;
-    margin-left: 10%;
 }
-.container-imagem img{
-    width: 60%;
+.container-imagem img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.container-imagem img:hover {
+    transform: scale(1.04);
 }
