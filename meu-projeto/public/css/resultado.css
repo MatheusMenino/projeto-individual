@@ -1,95 +1,153 @@
-.container-pai{
+.container-pai {
     display: flex;
     flex-direction: column;
-    background: var(--degrade-fundo);
-    height: 100vh;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    background: var(--degrade-fundo);
+    min-height: 75vh;
+    padding: 50px 0;
 }
 
-.container-resultado{
+.container-resultado {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background: var(--cor-fundo);
     width: 60%;
-    height: 80%;
-    align-items: center;
-    border-radius: 8px;
-    margin-top: 5%;
+    padding: 45px 35px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
 }
-.container-medalha{
+
+.resultado-topo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.resultado-topo p {
+    color: var(--cor-vermelho);
+    font-family: var(--fonte-descricao);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.linha-detalhe {
+    width: 35px;
+    height: 2px;
+    background: var(--cor-vermelho);
+}
+
+/* MEDALHA */
+
+.container-medalha {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 5%;
-    padding-bottom: 2%;
+    margin: 25px 0 15px;
 }
-.container-medalha img{
-    width: 120px;
+
+.container-medalha img {
+    width: 130px;
     height: auto;
 }
 
-.container-mensagem{
+/* MENSAGEM */
+
+.container-mensagem {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    width: 100%;
 }
 
-.container-mensagem h2{
-    font-size: 32px;
-    padding: 12px 0px 32px 0px;
+.container-mensagem h2 {
+    font-family: var(--fonte-titulo);
+    font-size: 30px;
     color: var(--cor-titulo);
+    margin-bottom: 10px;
 }
 
-.container-mensagem h3{
-    font-size: 22px;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    color: var(--cor-titulo);
-}
-
-.container-mensagem p{
-    font-size: 18px;
+.subtitulo-resultado {
+    font-family: var(--fonte-descricao);
+    font-size: 15px;
     color: var(--cor-descricao);
-    margin-top: 5%;
+    margin-bottom: 25px;
 }
 
+/* PONTUAÇÃO */
+
+.pontuacao-container {
+    padding: 15px 35px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.container-mensagem h3 {
+    font-family: var(--fonte-titulo);
+    font-size: 28px;
+    color: var(--cor-vermelho);
+}
+
+/* RESULTADO PERSONALIZADO */
+
+.container-mensagem #mensagemResultado {
+    max-width: 550px;
+    font-family: var(--fonte-descricao);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--cor-descricao);
+}
+
+/* LINKS E BOTÕES */
+
+.container-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    gap: 20px;
+}
 
 .btn-resultado {
-    padding: 6px 16px;
-    margin-top: 10px;
+    padding: 13px 35px;
     border: none;
     border-radius: 6px;
     background: var(--cor-vermelho);
     color: white;
     font-family: var(--fonte-descricao);
     font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
     transition: 0.2s ease;
 }
 
 .btn-resultado:hover {
-    transform: scale(1.03);
+    transform: translateY(-2px);
+    filter: brightness(1.15);
 }
 
-.container-mensagem a {
-    margin-top: 10px;
+.links-secundarios {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.links-secundarios a {
     color: var(--cor-descricao);
     font-family: var(--fonte-descricao);
-    font-size: 15px;
+    font-size: 14px;
     text-decoration: none;
     transition: 0.2s ease;
 }
 
-.container-mensagem a:hover {
+.links-secundarios a:hover {
     color: var(--cor-vermelho);
-    text-decoration: underline;
-}
-
-.container-links{
-    margin-top: 32px;
-}
-
-.container-links a{
-    padding: 0px 24px;
 }

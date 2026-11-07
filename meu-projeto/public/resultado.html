@@ -49,25 +49,48 @@
     </header>
 
     <main>
-       <section class="container-pai"> 
+      <section class="container-pai">
         <div class="container-resultado">
+
+          <div class="resultado-topo">
+            <span class="linha-detalhe"></span>
+            <p>DESAFIO CONCLUÍDO</p>
+            <span class="linha-detalhe"></span>
+          </div>
+
           <div class="container-medalha">
-            <img src="assets/imgs/medalha-resultado.png" alt="medalha-resultado">
+            <img src="assets/imgs/medalha-resultado.png" alt="Medalha de conquista">
           </div>
 
           <div class="container-mensagem">
-            <h2>QUIZ FINALIZADO</h2>
-            <h3 id="pontuacaoResultado">0/10 ACERTOS</h3>
-            <p id="mensagemResultado">Carregando seu resultado</p>
+            <h2>SUA HISTÓRIA COM O TIMÃO</h2>
 
-            <div class="container-links"  >
-              <a href="dashboard.html">Visualizar desempenho</a>
-              <button class="btn-resultado" onclick="refazerQuiz()">Jogar novamente</button>
-              <a href="index.html">Voltar ao ínicio</a>
+            <p class="subtitulo-resultado">
+              Confira como foi seu desempenho no desafio.
+            </p>
+
+            <div class="pontuacao-container">
+              <h3 id="pontuacaoResultado">0/10 ACERTOS</h3>
+            </div>
+
+            <p id="mensagemResultado">
+              Carregando seu resultado...
+            </p>
+
+            <div class="container-links">
+              <button class="btn-resultado" onclick="refazerQuiz()">
+                Jogar novamente
+              </button>
+
+              <div class="links-secundarios">
+                <a href="dashboard.html">Visualizar desempenho</a>
+                <a href="index.html">Voltar ao início</a>
+              </div>
             </div>
           </div>
+
         </div>
-       </section>
+      </section>
     </main>
 
     <footer>
@@ -139,16 +162,16 @@ function carregarResultado() {
   // Define a mensagem conforme o desempenho
   if (porcentagem <= 30) {
     elementoMensagem.innerHTML =
-      "Você ainda tem muito para descobrir sobre a história do Timão! Continue aprendendo e tente novamente.";
+      "Toda grande história começa com um primeiro passo! Ainda há muito para descobrir sobre o Corinthians. Continue explorando a trajetória do Timão e volte para testar seus conhecimentos!";
   } else if (porcentagem < 70) {
     elementoMensagem.innerHTML =
-      "Você conhece um pouco da história do Corinthians, mas ainda pode aprender muito mais. Vai, Corinthians!";
+      "Você já conhece alguns capítulos importantes da história alvinegra! Mas a trajetória do Corinthians é repleta de momentos que merecem ser lembrados. Continue aprendendo, Fiel!";
   } else if (porcentagem < 100) {
     elementoMensagem.innerHTML =
-      "Boa, Fiel! Você conhece bastante a história do Timão. Que tal tentar conquistar a pontuação máxima?";
+      "Boa, Fiel! Você demonstrou conhecer muito bem a história do Timão. Está quase alcançando a pontuação máxima. Que tal mais uma tentativa?";
   } else {
     elementoMensagem.innerHTML =
-      "Lenda da Fiel! Você mostrou que conhece a história do Corinthians de ponta a ponta. Parabéns!";
+      "Uma verdadeira aula de corinthianismo! Você mostrou conhecer cada detalhe deste clube que carrega uma história de luta, conquistas e paixão. Parabéns, Fiel!";
   }
 }
 
