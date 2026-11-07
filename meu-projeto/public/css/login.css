@@ -146,6 +146,7 @@ input::placeholder{
     margin-top: 2%;
     color: var(--cor-descricao);
     transition: transform 0.4s ease-in-out;
+    font-family: var(--fonte-links);
 }
 .formulario a:hover{
     transform: scale(1.05);
