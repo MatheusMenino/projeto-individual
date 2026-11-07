@@ -87,6 +87,10 @@
     background: var(--cor-fundo);
 }
 
+.secao-invertida{
+    flex-direction: row-reverse;
+}
+
 .conteudo-idolos {
     display: flex;
     flex-direction: column;
@@ -125,9 +129,12 @@
     object-fit: cover;
     object-position: center top;
     border-radius: 8px;
-    transition: transform 0.3s ease;
+    border: 1px solid rgba(220, 35, 45, 0.5);
+    box-shadow: 0 0 18px rgba(220, 35, 45, 0.18);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .container-imagem img:hover {
-    transform: scale(1.04);
+    transform: scale(1.02);
+    box-shadow: 0 0 25px rgba(220, 35, 45, 0.35);
 }
