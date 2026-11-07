@@ -227,13 +227,15 @@
 }
 
 .conteudo-final h2{
-    width: 65%;
-    font-size: 48px;
+    font-family: var(--fonte-titulo);
     font-weight: 600;
+    width: 65%;
+    font-size: 42px;
     margin-top: 2%;
     margin-bottom: 18px;
 }
 .conteudo-final p {
+    font-family: var(--fonte-descricao);
     font-size: 16px;
     max-width: 320px;
     line-height: 1.1;
@@ -242,28 +244,32 @@
 }
 
 .conteudo-final p:first-child{
+    font-family: var(--fonte-descricao);
     font-size: 14px;
-    color: var(--cor-vermelho);
+    color: var(--cor-titulo);
 }
 
 .paragrafo-final{
+    font-family: var(--fonte-descricao);
+    color: var(--cor-titulo);
     margin-top: 5%;
-    color: var(--cor-descricao);
+    margin-bottom: 2%;
 }
 
 .btn-final{
+    font-family: var(--fonte-links);
     margin-top: 1%;
     padding: 10px;
+    color: var(--cor-titulo);
     border-radius: 4px;
     background-color: var(--cor-vermelho);
     border: 1px solid var(--cor-vermelho);
-    color: var(--cor-descricao);
-    font: var(--fonte-descricao);
     font-size: 16px;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
 
 .btn-final:hover{
-    transform: scale(1.05);
+    transform: scale(1.04);
+    background: transparent;
 }
