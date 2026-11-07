@@ -138,3 +138,33 @@
     transform: scale(1.02);
     box-shadow: 0 0 25px rgba(220, 35, 45, 0.35);
 }
+
+
+
+.conquistas-idolo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.conquista {
+    border-left: 3px solid #c62828;
+    padding: 8px 18px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 0 6px 6px 0;
+    min-width: 130px;
+}
+
+.conquista h4 {
+    color: var(--cor-titulo);
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.conquista p {
+    color: var(--cor-descricao);
+    font-size: 13px;
+    margin: 0;
+}
