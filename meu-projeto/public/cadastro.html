@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/global.css" />
     <link rel="stylesheet" href="css/cadastro.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
     <title>ALMA DA FIEL | CADASTRO</title>
     <script src="./js/sessao.js"></script>
   </head>
@@ -82,16 +86,41 @@
                   />
                 </div>
               <div class="campo">
-                <label for="ipt_senha">Senha</label>
-                <input type="password" id="ipt_senha" placeholder="********" />
-              </div>
+                    <label for="ipt_senha">Senha</label>
+                    <div class="campo-senha">
+                        <input
+                            type="password"
+                            id="ipt_senha"
+                            placeholder="********"
+                        />
+
+                        <button
+                            type="button"
+                            class="btn-olho"
+                            onclick="mostrarSenha()"
+                            aria-label="Mostrar senha"
+                        >
+                            <i id="icone_olho" class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
               <div class="campo">
                 <label for="ipt_confirmar_senha">Confirmar senha</label>
-                <input
-                  type="password"
-                  id="ipt_confirmar_senha"
-                  placeholder="*******"
-                />
+                <div class="campo-senha">
+                  <input
+                    type="password"
+                    id="ipt_confirmar_senha"
+                    placeholder="*******"
+                  />
+                  <button 
+                    type="button"
+                            class="btn-olho"
+                            onclick="mostrarConfirmacaoSenha()"
+                            aria-label="Mostrar senha"
+                        >
+                            <i id="icone_olho" class="fa-solid fa-eye"></i>
+                  </button>
+                </div>
               </div>
 
               <button class="btn-criar" onclick="cadastrar()">
@@ -259,4 +288,23 @@
   function sumirMensagem() {
     cardErro.style.display = "none";
   }
+
+  function mostrarSenha() {
+    if (ipt_senha.type == "password") {
+        ipt_senha.type = "text";
+        icone_olho.className = "fa-solid fa-eye-slash";
+    } else {
+        ipt_senha.type = "password";
+        icone_olho.className = "fa-solid fa-eye";
+    }
+}
+  function mostrarConfirmacaoSenha() {
+    if (ipt_confirmar_senha.type == "password") {
+        ipt_confirmar_senha.type = "text";
+        icone_olho.className = "fa-solid fa-eye-slash";
+    } else {
+        ipt_confirmar_senha.type = "password";
+        icone_olho.className = "fa-solid fa-eye";
+    }
+}
 </script>
