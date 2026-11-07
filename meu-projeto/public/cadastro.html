@@ -103,6 +103,7 @@
                             <i id="icone_olho" class="fa-solid fa-eye"></i>
                         </button>
                     </div>
+                    <p class="dica-senha">Sua senha deve ter pelo menos 8 caracteres, uma letra maiúscula e uma letra minúscula.</p>
                 </div>
               <div class="campo">
                 <label for="ipt_confirmar_senha">Confirmar senha</label>
@@ -118,7 +119,7 @@
                             onclick="mostrarConfirmacaoSenha()"
                             aria-label="Mostrar senha"
                         >
-                            <i id="icone_olho" class="fa-solid fa-eye"></i>
+                            <i id="icone_olho_confirmacao" class="fa-solid fa-eye"></i>
                   </button>
                 </div>
               </div>
@@ -177,9 +178,6 @@
 </html>
 
 <script>
-  // // Array para armazenar empresas cadastradas para validação de código de ativação
-  // let listaEmpresasCadastradas = [];
-
   function cadastrar() {
     // aguardar();
 
@@ -189,26 +187,48 @@
     var emailVar = ipt_email.value;
     var senhaVar = ipt_senha.value;
     var confirmacaoSenhaVar = ipt_confirmar_senha.value;
+    var temMaiuscula = false;
+    var temMinuscula = false;
     // var codigoVar = codigo_input.value;
     // var idEmpresaVincular
 
     // Verificando se há algum campo em branco
-    if (
-      nomeVar == "" ||
-      emailVar == "" ||
-      senhaVar == "" ||
-      confirmacaoSenhaVar == "" ||
-      senhaVar != confirmacaoSenhaVar
-    ) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
+      if (  nomeVar == "" ||
+            emailVar == "" ||
+            senhaVar == "" ||
+            confirmacaoSenhaVar == ""
+        ) {
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML = "Preencha todos os campos.";
+            return false;
+        }
+        if (senhaVar != confirmacaoSenhaVar) {
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML = "As senhas não coincidem.";
+            return false;
+        }
 
-      finalizarAguardar();
-      return false;
-    } else {
-      setInterval(sumirMensagem, 5000);
+
+    if (senhaVar.length < 8) {
+    cardErro.style.display = "block";
+    mensagem_erro.innerHTML = "A senha precisa ter no mínimo 8 caracteres.";
+    return false;
+}
+
+    for (var i = 0; i < senhaVar.length; i++) {
+      if (senhaVar[i] >= "A" && senhaVar[i] <= "Z") {
+          temMaiuscula = true;
+      }
+      if (senhaVar[i] >= "a" && senhaVar[i] <= "z") {
+          temMinuscula = true;
+      }
     }
+
+if (temMaiuscula == false || temMinuscula == false) {
+    cardErro.style.display = "block";
+    mensagem_erro.innerHTML = "A senha precisa ter uma letra maiúscula e uma minúscula.";
+    return false;
+}
 
     // // Verificando se o código de ativação é de alguma empresa cadastrada
     // for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
@@ -259,37 +279,20 @@
       })
       .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML = "Não foi possível realizar o cadastro.";
+      finalizarAguardar();
       });
 
     return false;
   }
-
-  // // Listando empresas cadastradas
-  // function listar() {
-  //   fetch("/empresas/listar", {
-  //     method: "GET",
-  //   })
-  //     .then(function (resposta) {
-  //       resposta.json().then((empresas) => {
-  //         empresas.forEach((empresa) => {
-  //           listaEmpresasCadastradas.push(empresa);
-
-  //           console.log("listaEmpresasCadastradas")
-  //           console.log(listaEmpresasCadastradas[0].codigo_ativacao)
-  //         });
-  //       });
-  //     })
-  //     .catch(function (resposta) {
-  //       console.log(`#ERRO: ${resposta}`);
-  //     });
-  // }
 
   function sumirMensagem() {
     cardErro.style.display = "none";
   }
 
   function mostrarSenha() {
+
     if (ipt_senha.type == "password") {
         ipt_senha.type = "text";
         icone_olho.className = "fa-solid fa-eye-slash";
@@ -298,13 +301,18 @@
         icone_olho.className = "fa-solid fa-eye";
     }
 }
-  function mostrarConfirmacaoSenha() {
-    if (ipt_confirmar_senha.type == "password") {
-        ipt_confirmar_senha.type = "text";
-        icone_olho.className = "fa-solid fa-eye-slash";
+
+function mostrarConfirmacaoSenha() {
+
+    var campo = document.getElementById("ipt_confirmar_senha");
+    var icone = document.getElementById("icone_olho_confirmacao");
+
+    if (campo.type == "password") {
+        campo.type = "text";
+        icone.className = "fa-solid fa-eye-slash";
     } else {
-        ipt_confirmar_senha.type = "password";
-        icone_olho.className = "fa-solid fa-eye";
+        campo.type = "password";
+        icone.className = "fa-solid fa-eye";
     }
 }
 </script>

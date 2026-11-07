@@ -192,3 +192,11 @@ input::placeholder{
     color: #A0A0A0;
     font-size: 17px;;
 }
+
+.dica-senha {
+    color: var(--cor-descricao);
+    font-size: 10px;
+    font-family: var(--fonte-descricao);
+    margin-top: 8px;
+    line-height: 1.5;
+}
