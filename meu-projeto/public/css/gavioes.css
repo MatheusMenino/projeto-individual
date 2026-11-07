@@ -40,23 +40,29 @@
     transform: translateY(-50%);
 
     z-index: 1;
-    color: white;
+    color: var(--cor-titulo);
 }
 
 .conteudo-home h1 {
-    width: 60%;
+    font-family: var(--fonte-titulo);
     font-size: 64px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    width: 60%;
     margin-bottom: 8px;
-    font-weight: 600;
+    text-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
 }
 
+
 .conteudo-home p {
-    font-size: 14px;
-    max-width: 310px;
-    line-height: 1.1;
-    font-weight: 300;
+    font-family: var(--fonte-descricao);
+    font-size: 16px;
+    max-width: 410px;
+    line-height: 1.4;
+    font-weight: 600;
     color: var(--cor-descricao);
-    
+    text-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
 }
 .secao {
     display: flex;
