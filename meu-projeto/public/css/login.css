@@ -43,14 +43,22 @@
     align-content: end;
 
     z-index: 1;
-    color: white;
+    color: var(--cor-titulo);
 }
 
 .conteudo-login h1 {
-    width: 40%;
+    font-family: var(--fonte-titulo);
+    width: 50%;
     font-size: 32px;
     margin-bottom: 8px;
     font-weight: 600;
+}
+
+.conteudo-login p{
+    font-family: var(--fonte-descricao);
+    margin-top: 2%;
+    width: 32%;
+    color: var(--cor-descricao);
 }
 
 .container-forms{
@@ -65,17 +73,24 @@
 }
 
 .titulo-forms{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 4%;
     margin-right: 10%;
+    
 }
 
 .titulo-forms h2{
-    color: white;
-    font-size: 40px;
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+    color: var(--cor-titulo);
+    font-size: 32px;
 }
 .titulo-forms p{
+    font-family: var(--fonte-descricao);
     color: var(--cor-descricao);
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .formulario{
@@ -109,6 +124,7 @@ input::placeholder{
 }
 
 .btn-entrar{
+    font-family: var(--fonte-links);
     margin-top: 6%;
     padding: 12px;
     border-radius: 4px;
@@ -116,11 +132,12 @@ input::placeholder{
     border: 1px solid #D71920;
     color: white;
     cursor: pointer;
-    transition: transform 0.5s ease;
+    transition: transform 0.4s ease;
 }
 
 .btn-entrar:hover{
-    transform: scale(1.06);
+    transform: scale(1.04);
+    background: transparent;
 }   
 
 .formulario a{
