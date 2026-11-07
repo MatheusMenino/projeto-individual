@@ -1,15 +1,13 @@
-const { json } = require("express");
 var usuarioModel = require("../models/usuarioModel");
-const { bus } = require("nodemon/lib/utils");
 // var aquarioModel = require("../models/aquarioModel");
 
 function autenticar(req, res) {
   var email = req.body.emailServer;
   var senha = req.body.senhaServer;
 
-  if (email == undefined) {
+  if (email == undefined || email == "") {
     res.status(400).send("Informe seu email!");
-  } else if (senha == undefined) {
+  } else if (senha == undefined || senha == "") {
     res.status(400).send("Informe sua senha!");
   } else {
     usuarioModel
