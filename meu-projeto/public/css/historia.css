@@ -43,21 +43,27 @@
     transform: translateY(-50%);
 
     z-index: 1;
-    color: white;
+    color: var(--cor-titulo);
 }
 
 .conteudo-historia h1 {
     width: 60%;
-    font-size: 70px;
+    font-size: 68px;
     margin-bottom: 20px;
-    font-weight: 500;
+    font-weight: 600;
+    font-family: var(--fonte-titulo);
+    letter-spacing: 2px;
+    line-height: 1.5;
+    text-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
 }
 
 .conteudo-historia h2{
+    font-family: var(--fonte-titulo);
     width: 40%;
-    font-size: 18px;
-    font-weight: 100;
+    font-size: 22px;
+    font-weight: 500;
     color: var(--cor-descricao);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
 }
 
 .conteudo-historia p {
@@ -66,8 +72,8 @@
     line-height: 1.2;
     font-weight: 400;
     color: var(--cor-descricao);
+    font-family: var(--fonte-descricao);
 }
-
 
 /*    LINHA DO TEMPO      */
 
