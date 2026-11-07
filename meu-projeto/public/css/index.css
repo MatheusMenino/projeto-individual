@@ -44,20 +44,20 @@
 }
 
 .conteudo-home h1 {
-    font-size: 64px;
+    font-size: 68px;
     margin-bottom: 8px;
     font-weight: 600;
 }
 
 .conteudo-home h2{
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 600;
     margin-bottom: 16px;
 }
 .conteudo-home p {
-    font-size: 14px;
+    font-size: 16px;
     max-width: 310px;
-    line-height: 1.1;
+    line-height: 1.5;
     font-weight: 300;
     color: var(--cor-descricao);
     
@@ -70,7 +70,7 @@
     background: var(--cor-vermelho);
     border: 1px solid var(--cor-vermelho);
     font: var(--fonte-descricao);
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .btn-home:hover{
