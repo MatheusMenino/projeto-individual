@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
 
 *{
     margin: 0;
@@ -7,26 +6,30 @@
     box-sizing: border-box;
     list-style: none;
 }
-:root{
+
+:root {
     --cor-vermelho: #FF383C;
     --cor-fundo: #08090B;
+
     --degrade-fundo: linear-gradient(
         to bottom,
         #08090B 0%,
         #050506 60%,
         #000000 100%
-    ); 
-    --cor-titulo: #ffffff;
+    );
+
+    --cor-titulo: #FFFFFF;
     --cor-descricao: #D1D3D6;
     --cor-vermelho-forte: #FF0000;
+
     --fonte-descricao: 'Inter', sans-serif;
     --fonte-titulo: 'Poppins', sans-serif;
     --fonte-links: 'Inter', sans-serif;
+
     --pelicula-96: rgba(8, 9, 11, 0.96);
     --pelicula-74: rgba(8, 9, 11, 0.74);
     --pelicula-7: rgba(8, 9, 11, 0.07);
-}   
-
+}
 * a{
     text-decoration: none;
 }
