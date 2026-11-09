@@ -48,7 +48,7 @@
 
 .conteudo-cadastro h1 {
     font-family: var(--fonte-titulo);
-    width: 45%;
+    width: 40%;
     font-size: 32px;
     margin-bottom: 8px;
     font-weight: 600;
@@ -88,6 +88,7 @@
 }
 
 .titulo-forms h2{
+    margin-top: 24px;
     color: white;
     font-size: 40px;
 }
@@ -148,7 +149,7 @@ input::placeholder{
     font-family: var(--fonte-links);
     display: flex;
     justify-content: center;
-    margin-top: 2%;
+    margin-top: 1%;
     color: var(--cor-descricao);
     transition: transform 0.4s ease-in-out;
 }
