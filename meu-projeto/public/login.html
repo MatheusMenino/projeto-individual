@@ -145,69 +145,65 @@
   </body>
 </html>
 <script>
-  function entrar() {
+
+function entrar() {
 
     var emailVar = ipt_email.value;
     var senhaVar = ipt_senha.value;
 
     if (emailVar == "" || senhaVar == "") {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
-      return false;
-    } else {
-      setInterval(sumirMensagem, 5000);
+        cardErro.classList.remove("sucesso");
+        cardErro.style.display = "block";
+        mensagem_erro.innerHTML = "Preencha todos os campos.";
+        return false;
     }
-
     console.log("FORM LOGIN: ", emailVar);
-    // console.log("FORM SENHA: ", senhaVar);
-
     fetch("/usuarios/autenticar", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        emailServer: emailVar,
-        senhaServer: senhaVar,
-      }),
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            emailServer: emailVar,
+            senhaServer: senhaVar,
+        }),
     })
-      .then(function (resposta) {
-        console.log("ESTOU NO THEN DO entrar()!");
-
+    .then(function (resposta) {
         if (resposta.ok) {
-          console.log(resposta);
 
-          resposta.json().then((json) => {
-            console.log(json);
-            console.log(JSON.stringify(json));
-            sessionStorage.EMAIL_USUARIO = json.email;
-            sessionStorage.NOME_USUARIO = json.nome;
-            sessionStorage.ID_USUARIO = json.id;
+            resposta.json().then((json) => {
 
-            setTimeout(function () {
-              window.location = "index.html";
-            }, 1000); //redireciona apos 1s
-          });
+                sessionStorage.EMAIL_USUARIO = json.email;
+                sessionStorage.NOME_USUARIO = json.nome;
+                sessionStorage.ID_USUARIO = json.id;
+                cardErro.style.display = "block";
+                cardErro.classList.add("sucesso");
+                mensagem_erro.innerHTML = "Login realizado com sucesso! Redirecionando...";
+                setTimeout(function () {
+                    window.location = "index.html";
+                }, 2000);
+            });
         } else {
-          console.log("Houve um erro ao tentar realizar o login!");
+            cardErro.style.display = "block";
+            cardErro.classList.remove("sucesso");
+            mensagem_erro.innerHTML = "E-mail ou senha incorretos.";
 
-          resposta.text().then((texto) => {
-            console.error(texto);
-          });
         }
-      })
-      .catch(function (erro) {
-        console.log(erro);
-      });
+
+    })
+    .catch(function (erro) {
+        console.log("#ERRO:", erro);
+        cardErro.style.display = "block";
+        cardErro.classList.remove("sucesso");
+        mensagem_erro.innerHTML = "Não foi possível conectar ao servidor.";
+
+    });
 
     return false;
-  }
-
-  function sumirMensagem() {
+}
+function sumirMensagem() {
     cardErro.style.display = "none";
-  }
-
+}
 function mostrarSenha() {
     if (ipt_senha.type == "password") {
         ipt_senha.type = "text";

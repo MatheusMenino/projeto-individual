@@ -187,3 +187,59 @@ input::placeholder{
     color: #A0A0A0;
     font-size: 17px;;
 }
+
+
+/* Card de mensagens */
+.card_erro {
+    display: none;
+    width: 100%;
+    margin-top: 18px;
+    padding: 14px 16px;
+
+    background: rgba(215, 25, 32, 0.10);
+    border: 1px solid rgba(215, 25, 32, 0.65);
+    border-left: 4px solid #D71920;
+    border-radius: 6px;
+
+    animation: aparecerMensagem 0.3s ease;
+}
+
+#mensagem_erro {
+    color: #FF6B70;
+    font-family: var(--fonte-descricao);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+#mensagem_erro::before {
+    content: "\f06a";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 9px;
+    color: #D71920;
+}
+
+/* Mensagem de sucesso */
+.card_erro.sucesso {
+    background: rgba(46, 204, 113, 0.10);
+    border-color: rgba(46, 204, 113, 0.55);
+    border-left-color: #2ecc71;
+}
+
+.card_erro.sucesso #mensagem_erro {
+    color: #75D99B;
+}
+
+.card_erro.sucesso #mensagem_erro::before {
+    content: "\f058";
+    color: #2ecc71;
+}
+
+/* Animação */
+@keyframes aparecerMensagem {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+}

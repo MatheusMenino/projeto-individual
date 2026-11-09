@@ -201,3 +201,54 @@ input::placeholder{
     margin-top: 8px;
     line-height: 1.5;
 }
+
+#cardErro {
+    display: none;
+    width: 100%;
+    margin-top: 18px;
+    padding: 14px 16px;
+
+    background: rgba(215, 25, 32, 0.10);
+    border: 1px solid rgba(215, 25, 32, 0.65);
+    border-left: 4px solid #D71920;
+    border-radius: 6px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+
+    animation: aparecerErro 0.3s ease;
+}
+
+#mensagem_erro {
+    color: #FF6B70;
+    font-family: var(--fonte-descricao);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+#mensagem_erro::before {
+    content: "\f06a";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 17px;
+    color: #D71920;
+    flex-shrink: 0;
+}
+
+/* Animação de entrada */
+@keyframes aparecerErro {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
