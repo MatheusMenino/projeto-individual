@@ -61,6 +61,7 @@ function cadastrar(req, res) {
         console.log("Erro ao realizar o cadastro:", erro);
 
         if (erro.code == "ER_DUP_ENTRY") {
+          console.log("ENTROU NA CONDIÇÃO DO EMAIL")
             return res.status(409).json({
                 mensagem: "Este e-mail já está cadastrado. Utilize outro e-mail."
             });

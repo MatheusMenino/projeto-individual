@@ -274,6 +274,9 @@ if (temMaiuscula == false || temMinuscula == false) {
             limparFormulario();
             finalizarAguardar();
         } else {
+            console.log("STATUS:", resposta.status);
+            console.log("DADOS RECEBIDOS:", dados);
+              
             cardErro.style.display = "block";
             mensagem_erro.innerHTML = dados.mensagem;
             finalizarAguardar();
