@@ -259,32 +259,33 @@ if (temMaiuscula == false || temMinuscula == false) {
         // idEmpresaVincularServer: idEmpresaVincular
       }),
     })
-      .then(function (resposta) {
-        console.log("resposta: ", resposta);
 
+    .then(function (resposta) {
+      return resposta.json().then(function (dados) {
         if (resposta.ok) {
-          cardErro.style.display = "block";
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML =
+                "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
-          mensagem_erro.innerHTML =
-            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+            setTimeout(() => {
+                window.location = "login.html";
+            }, 2000);
 
-          setTimeout(() => {
-            window.location = "login.html";
-          }, "2000");
-
-          limparFormulario();
-          finalizarAguardar();
+            limparFormulario();
+            finalizarAguardar();
         } else {
-          throw "Houve um erro ao tentar realizar o cadastro!";
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML = dados.mensagem;
+            finalizarAguardar();
         }
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
+    });
+  })
+    .catch(function (erro) {
+      console.log("#ERRO:", erro);
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML = "Não foi possível realizar o cadastro.";
+      mensagem_erro.innerHTML = "Não foi possível se conectar ao servidor.";
       finalizarAguardar();
-      });
-
+  });
     return false;
   }
 
