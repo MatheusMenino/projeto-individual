@@ -263,20 +263,20 @@ if (temMaiuscula == false || temMinuscula == false) {
     .then(function (resposta) {
       return resposta.json().then(function (dados) {
         if (resposta.ok) {
+            cardErro.classList.add("sucesso");
             cardErro.style.display = "block";
             mensagem_erro.innerHTML =
                 "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
             setTimeout(() => {
                 window.location = "login.html";
-            }, 2000);
+            }, 3000);
 
-            limparFormulario();
-            finalizarAguardar();
         } else {
-            console.log("STATUS:", resposta.status);
-            console.log("DADOS RECEBIDOS:", dados);
-              
+          console.log("STATUS:", resposta.status);
+          console.log("DADOS RECEBIDOS:", dados);
+          
+            cardErro.classList.remove("sucesso");
             cardErro.style.display = "block";
             mensagem_erro.innerHTML = dados.mensagem;
             finalizarAguardar();
