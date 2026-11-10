@@ -221,19 +221,29 @@ input::placeholder{
 }
 
 /* Mensagem de sucesso */
-.card_erro.sucesso {
-    background: rgba(46, 204, 113, 0.10);
-    border-color: rgba(46, 204, 113, 0.55);
-    border-left-color: #2ecc71;
+/* Mensagem de sucesso */
+#cardErro.sucesso {
+    background-color: #1c1c1c;
+    border: 1px solid #c8102e;
+    border-left: 4px solid #c8102e;
 }
 
-.card_erro.sucesso #mensagem_erro {
-    color: #75D99B;
+#cardErro.sucesso p {
+    color: #ffffff;
 }
 
-.card_erro.sucesso #mensagem_erro::before {
+#cardErro.sucesso p::before {
     content: "\f058";
-    color: #2ecc71;
+    color: #c8102e;
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+#cardErro.sucesso #mensagem_erro {
+    color: #F5F5F5;
+}
+
+#cardErro.sucesso #mensagem_erro::before {
+    color: #c8102e;
 }
 
 /* Animação */
