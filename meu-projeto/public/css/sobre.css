@@ -67,13 +67,14 @@
     align-items: center;
     justify-content: center;
     width: 50%;
-    height: 30vh;
+    height: 48vh;
 }
 
 .secaoSobre img {
-    width: 400px;
-    max-width: 85%;
+    width: 85%;
+    height: 100%;
     object-fit: cover;
+    border-radius: 8px;
 }
 
 /* SEÇÃO 2 */
@@ -107,13 +108,15 @@
     display: flex;
     align-items: center;
     width: 100%;
-    gap: 40px;
+    gap: 25px;
     margin-top: 8px;
 }
 
 .container-imagem2 img {
-    width: 12vw;
+    width: 42%;
+    height: 330px;
     object-fit: cover;
+    border-radius: 8px;
 }
 
 /* SEÇÃO 3 */
@@ -147,11 +150,27 @@
     display: flex;
     align-items: center;
     width: 100%;
-    gap: 40px;
+    gap: 25px;
     margin-top: 8px;
 }
 
 .container-imagem3 img {
-    width: 12vw;
+    width: 42%;
+    height: 330px;
     object-fit: cover;
+    border-radius: 8px;
+}
+
+.container-imagem1 img,
+.container-imagem2 img,
+.container-imagem3 img {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.container-imagem1 img:hover,
+.container-imagem2 img:hover,
+.container-imagem3 img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }
