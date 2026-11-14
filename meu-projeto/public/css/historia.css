@@ -19,7 +19,6 @@
     display: block;
 }
 
-/* Película por cima da imagem */
 .container-historia::after {
     content: "";
     position: absolute;
@@ -75,8 +74,6 @@
     font-family: var(--fonte-descricao);
 }
 
-/*    LINHA DO TEMPO      */
-
 .secao-tempo{
     display: block;
     align-items: center;
@@ -112,6 +109,7 @@
     font-size: 16px;
     color: var(--cor-descricao);
     letter-spacing: 0.5px;
+    text-align: justify;
 }
 
 
@@ -120,6 +118,7 @@
     font-size: 16px;
     color: var(--cor-vermelho);
     letter-spacing: 0.5px;
+    text-align: justify;
 }
 
 .container-fatos {
@@ -176,6 +175,7 @@
     font-size: 13px;
     line-height: 1.6;
     color: var(--cor-descricao);
+    text-align: justify;
 }
 
 /*      SEÇÃO FINAL    */
@@ -241,12 +241,14 @@
     line-height: 1.1;
     font-weight: 300;
     color: var(--cor-descricao);
+    text-align: justify;
 }
 
 .conteudo-final p:first-child{
     font-family: var(--fonte-descricao);
     font-size: 14px;
     color: var(--cor-titulo);
+    text-align: justify;
 }
 
 .paragrafo-final{
@@ -254,6 +256,7 @@
     color: var(--cor-titulo);
     margin-top: 5%;
     margin-bottom: 2%;
+    text-align: justify;
 }
 
 .btn-final{
