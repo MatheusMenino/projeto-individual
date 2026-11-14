@@ -35,12 +35,12 @@
     font-weight: 400;
     line-height: 1.7;
     letter-spacing: 0;
+    text-align: justify;
 }
 .container-descricao p:first-child {
     margin-bottom: 18px;
 }
 
-/* SEÇÃO 1 */
 .secaoSobre {
     display: flex;
     align-items: center;
@@ -76,8 +76,6 @@
     object-fit: cover;
     border-radius: 8px;
 }
-
-/* SEÇÃO 2 */
 
 .secaoSobre2 {
     display: flex;
@@ -118,8 +116,6 @@
     object-fit: cover;
     border-radius: 8px;
 }
-
-/* SEÇÃO 3 */
 
 .secaoSobre3 {
     display: flex;
@@ -173,4 +169,48 @@
     transform: scale(1.04);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
     cursor: pointer;
+}
+
+
+.frase-destaque {
+    width: 100%;
+    padding: 90px 10%;
+    background-color: var(--cor-fundo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.conteudo-frase {
+    max-width: 1000px;
+}
+
+.conteudo-frase span {
+    color: #c90000;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.conteudo-frase h2 {
+    color: #ffffff;
+    font-size: 38px;
+    line-height: 1.4;
+    font-weight: 500;
+    margin: 25px 0;
+}
+
+.conteudo-frase h2 strong {
+    color: #c90000;
+    font-weight: bold;
+}
+
+.linha-destaque {
+    width: 70px;
+    height: 4px;
+    background-color: #c90000;
+    margin: 30px auto 0;
+    border-radius: 5px;
 }
