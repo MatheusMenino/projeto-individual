@@ -263,8 +263,7 @@
 
     if (idUsuario == undefined) {
       alert("Faça login para acessar sua dashboard.");
-      window.location.href = "login.html";
-      return;
+      return      
     }
 
     fetch("/usuarios/resultados/" + idUsuario)
