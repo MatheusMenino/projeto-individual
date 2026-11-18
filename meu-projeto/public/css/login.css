@@ -59,6 +59,7 @@
     margin-top: 2%;
     width: 32%;
     color: var(--cor-descricao);
+    text-align: justify;
 }
 
 .container-forms{
@@ -147,6 +148,7 @@ input::placeholder{
     color: var(--cor-descricao);
     transition: transform 0.4s ease-in-out;
     font-family: var(--fonte-links);
+    margin-top: 20px;
 }
 .formulario a:hover{
     transform: scale(1.05);
