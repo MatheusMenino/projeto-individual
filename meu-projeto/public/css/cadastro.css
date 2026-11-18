@@ -65,6 +65,7 @@
     margin-top: 2%;
     width: 32%;
     color: var(--cor-descricao);
+    text-align: justify;
 }
 
 .container-forms{
@@ -196,10 +197,11 @@ input::placeholder{
 
 .dica-senha {
     color: var(--cor-descricao);
-    font-size: 10px;
+    font-size: 11px;
     font-family: var(--fonte-descricao);
     margin-top: 8px;
     line-height: 1.5;
+    text-align: justify;
 }
 #cardErro {
     display: none;
