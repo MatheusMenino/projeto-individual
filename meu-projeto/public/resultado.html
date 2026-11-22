@@ -1,189 +1,132 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/global.css" />
-    <link rel="stylesheet" href="css/resultado.css" />
-    <script src="js/sessao.js"></script>
-    <title>ALMA DA FIEL | RESULTADO</title>
-    <link rel="icon" href="assets/imgs/icon-corinthians.png" type="image/png">
-  </head>
-  <body>
-    <header>
-      <div class="logo">
-        <picture>
-          <a href="index.html"
-            ><img
-              src="https://upload.wikimedia.org/wikipedia/commons/2/27/SCCorinthians_Paulista_1910.png?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original"
-              alt="logo-site"
-          /></a>
-        </picture>
-        <a href="index.html"
-          ><h1>ALMA DA <span>FIEL</span></h1></a
-        >
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/resultado.css" />
+  <script src="js/sessao.js"></script>
+  <title>ALMA DA FIEL | RESULTADO</title>
+  <link rel="icon" href="assets/imgs/icon-corinthians.png" type="image/png">
+</head>
 
-      <nav>
-        <ul>
-          <li><a href="index.html#secaoSobre">Sobre</a></li>
-          <li><a href="historia.html">História</a></li>
-          <li><a href="idolos.html">Ídolos</a></li>
-          <li><a href="gavioes.html">Gaviões da Fiel</a></li>
-          <li><a href="quiz.html">Quiz</a></li>
-          <li><a href="dashboard.html">Dashboard</a></li>
-        </ul>
-      </nav>
+<body>
+  <header>
+    <div class="logo">
+      <picture>
+        <a href="index.html"><img
+            src="https://upload.wikimedia.org/wikipedia/commons/2/27/SCCorinthians_Paulista_1910.png?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original"
+            alt="logo-site" /></a>
+      </picture>
+      <a href="index.html">
+        <h1>ALMA DA <span>FIEL</span></h1>
+      </a>
+    </div>
 
-      <div class="btn-header">
-        <button class="btn-login"><a href="login.html">Login</a></button>
-        <button class="btn-cadastro">
-          <a href="cadastro.html">Cadastro</a>
-        </button>
-        <div class="usuario-logado" style="display: none;">
+    <nav>
+      <ul>
+        <li><a href="index.html#secaoSobre">Sobre</a></li>
+        <li><a href="historia.html">História</a></li>
+        <li><a href="idolos.html">Ídolos</a></li>
+        <li><a href="gavioes.html">Gaviões da Fiel</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+
+    <div class="btn-header">
+      <button class="btn-login"><a href="login.html">Login</a></button>
+      <button class="btn-cadastro">
+        <a href="cadastro.html">Cadastro</a>
+      </button>
+      <div class="usuario-logado" style="display: none;">
         <span class="nome-usuario"></span>
         <button class="btn-sair" onclick="limparSessao()" title="Sair da conta">
           <img src="assets/icon/sair.png" alt="Sair da conta">
         </button>
       </div>
-      </div>
-    </header>
+    </div>
+  </header>
 
-    <main>
-      <section class="container-pai">
-        <div class="container-resultado">
+  <main>
+    <section class="container-pai">
+      <div class="container-resultado">
 
-          <div class="resultado-topo">
-            <span class="linha-detalhe"></span>
-            <p>DESAFIO CONCLUÍDO</p>
-            <span class="linha-detalhe"></span>
+        <div class="resultado-topo">
+          <span class="linha-detalhe"></span>
+          <p>DESAFIO CONCLUÍDO</p>
+          <span class="linha-detalhe"></span>
+        </div>
+
+        <div class="container-medalha">
+          <img src="assets/imgs/medalha-resultado.png" alt="Medalha de conquista">
+        </div>
+
+        <div class="container-mensagem">
+          <h2>SUA HISTÓRIA COM O TIMÃO</h2>
+
+          <p class="subtitulo-resultado">
+            Confira como foi seu desempenho no desafio.
+          </p>
+
+          <div class="pontuacao-container">
+            <h3 id="pontuacaoResultado">0/10 ACERTOS</h3>
           </div>
 
-          <div class="container-medalha">
-            <img src="assets/imgs/medalha-resultado.png" alt="Medalha de conquista">
-          </div>
+          <p id="mensagemResultado">
+            Carregando seu resultado...
+          </p>
 
-          <div class="container-mensagem">
-            <h2>SUA HISTÓRIA COM O TIMÃO</h2>
+          <div class="container-links">
+            <button class="btn-resultado" onclick="refazerQuiz()">
+              Jogar novamente
+            </button>
 
-            <p class="subtitulo-resultado">
-              Confira como foi seu desempenho no desafio.
-            </p>
-
-            <div class="pontuacao-container">
-              <h3 id="pontuacaoResultado">0/10 ACERTOS</h3>
+            <div class="links-secundarios">
+              <a href="dashboard.html">Visualizar desempenho</a>
+              <a href="index.html">Voltar ao início</a>
             </div>
-
-            <p id="mensagemResultado">
-              Carregando seu resultado...
-            </p>
-
-            <div class="container-links">
-              <button class="btn-resultado" onclick="refazerQuiz()">
-                Jogar novamente
-              </button>
-
-              <div class="links-secundarios">
-                <a href="dashboard.html">Visualizar desempenho</a>
-                <a href="index.html">Voltar ao início</a>
-              </div>
-            </div>
           </div>
-
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="titulo-footer">
-        <h2>ALMA DA <span>FIEL</span></h2>
-        <p>Uma história que vive em cada torcedor</p>
-      </div>
-
-      <div class="nav-footer">
-        <h3>Navegação</h3>
-        <ul>
-          <li><a href="index.html#secaoSobre">Sobre</a></li>
-          <li><a href="historia.html">História</a></li>
-          <li><a href="idolos.html">Ídolos</a></li>
-          <li><a href="gavioes.html">Gaviões da Fiel</a></li>
-          <li><a href="quiz.html">Quiz</a></li>
-          <li><a href="dashboard.html">Dashboard</a></li>
-        </ul>
-      </div>
-
-      <div class="siga-me">
-        <h3>Follow me</h3>
-        <div class="icon-footer">
-          <a
-            href="https://github.com/MatheusMenino/MatheusMenino"
-            target="_blank"
-            ><img src="assets/icon/github.png" alt="github" />Github</a
-          >
-
-          <a href="https://www.linkedin.com/in/matheusmenino/" target="_blank"
-            ><img src="assets/icon/linkedin.png" alt="linkedin" />Linkedin</a
-          >
         </div>
 
-        <div class="copy-footer">
-          <p>© 2026 ALMA DA FIEL | MATHEUS MENINO</p>
-        </div>
       </div>
-    </footer>
-  </body>
+    </section>
+  </main>
+
+  <footer>
+    <div class="titulo-footer">
+      <h2>ALMA DA <span>FIEL</span></h2>
+      <p>Uma história que vive em cada torcedor</p>
+    </div>
+
+    <div class="nav-footer">
+      <h3>Navegação</h3>
+      <ul>
+        <li><a href="index.html#secaoSobre">Sobre</a></li>
+        <li><a href="historia.html">História</a></li>
+        <li><a href="idolos.html">Ídolos</a></li>
+        <li><a href="gavioes.html">Gaviões da Fiel</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </div>
+
+    <div class="siga-me">
+      <h3>Follow me</h3>
+      <div class="icon-footer">
+        <a href="https://github.com/MatheusMenino/MatheusMenino" target="_blank"><img src="assets/icon/github.png"
+            alt="github" />Github</a>
+
+        <a href="https://www.linkedin.com/in/matheusmenino/" target="_blank"><img src="assets/icon/linkedin.png"
+            alt="linkedin" />Linkedin</a>
+      </div>
+
+      <div class="copy-footer">
+        <p>© 2026 ALMA DA FIEL | MATHEUS MENINO</p>
+      </div>
+    </div>
+  </footer>
+  <script src="js/resultado.js"></script>
+</body>
+
 </html>
-
-<script>
-function carregarResultado() {
-  const pontuacaoFinal = sessionStorage.getItem("pontuacaoFinal");
-  const quantidadeDeQuestoes = sessionStorage.getItem(
-    "quantidadeDeQuestoes"
-  );
-
-  const elementoPontuacao = document.getElementById("pontuacaoResultado");
-  const elementoMensagem = document.getElementById("mensagemResultado");
-
-  // Verifica se existe um resultado salvo
-  if (pontuacaoFinal === null || quantidadeDeQuestoes === null) {
-    elementoPontuacao.innerHTML = "Nenhum resultado encontrado";
-    elementoMensagem.innerHTML =
-      "Responda ao quiz para descobrir seu conhecimento sobre o Corinthians.";
-
-    return;
-  }
-
-  let acertos = Number(pontuacaoFinal);
-  let total = Number(quantidadeDeQuestoes);
-  let porcentagem = (acertos / total) * 100;
-
-  // Exibe a pontuação
-  elementoPontuacao.innerHTML = `${acertos}/${total} ACERTOS`;
-
-  // Define a mensagem conforme o desempenho
-  if (porcentagem <= 30) {
-    elementoMensagem.innerHTML =
-      "Toda grande história começa com um primeiro passo! Ainda há muito para descobrir sobre o Corinthians. Continue explorando a trajetória do Timão e volte para testar seus conhecimentos!";
-  } else if (porcentagem < 70) {
-    elementoMensagem.innerHTML =
-      "Você já conhece alguns capítulos importantes da história alvinegra! Mas a trajetória do Corinthians é repleta de momentos que merecem ser lembrados. Continue aprendendo, Fiel!";
-  } else if (porcentagem < 100) {
-    elementoMensagem.innerHTML =
-      "Boa, Fiel! Você demonstrou conhecer muito bem a história do Timão. Está quase alcançando a pontuação máxima. Que tal mais uma tentativa?";
-  } else {
-    elementoMensagem.innerHTML =
-      "Uma verdadeira aula de corinthianismo! Você mostrou conhecer cada detalhe deste clube que carrega uma história de luta, conquistas e paixão. Parabéns, Fiel!";
-  }
-}
-
-function refazerQuiz() {
-  sessionStorage.removeItem("pontuacaoFinal");
-  sessionStorage.removeItem("quantidadeDeQuestoes");
-
-  window.location.href = "quiz.html";
-}
-
-carregarResultado();
-
-
-</script>
