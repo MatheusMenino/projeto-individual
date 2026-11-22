@@ -78,6 +78,11 @@
               </div>
 
               <div class="indicador">
+                <p class="indicador-titulo">Total de erros</p>
+                <span class="indicador-valor" id="totalErros">0</span>
+              </div>
+
+              <div class="indicador">
                 <p class="indicador-titulo">Aproveitamento</p>
                 <span class="indicador-valor" id="aproveitamento">0%</span>
               </div>
@@ -152,6 +157,7 @@
     })
     .then(function(resultados){
       let totalAcertos = 0;
+      let totalErros = 0;
       let totalPerguntas = 0;
       let labels = [];
       let acertos = [];
@@ -159,6 +165,7 @@
 
       for(let i = 0; i < resultados.length; i++){
         totalAcertos += Number(resultados[i].acertos);
+        totalErros += Number(resultados[i].erros);
         totalPerguntas += Number(resultados[i].totalPerguntas);
 
         labels.push("Tentativa " + (i + 1));
@@ -167,6 +174,7 @@
       }
       document.getElementById("totalTentativas").innerHTML = resultados.length;
       document.getElementById("totalAcertos").innerHTML = totalAcertos;
+      document.getElementById("totalErros").innerHTML = totalErros;
       
       let percentual = 0 
       if(totalPerguntas > 0){
@@ -188,19 +196,38 @@
 
     // Adicionando gráfico criado em div na tela
     let myChart = new Chart(canvas, {
-      type: "bar",
+      type: "line",
       data: {
         labels: labels,
         datasets: [
           {
             label: "Acertos",
             data: acertos,
-            backgroundColor: "#424242",
+            borderColor: "#FF383C",
+            backgroundColor: "transparent",
+            borderWidth: 3,
+            pointBackgroundColor: "#FF383C",
+            pointBorderColor: "#FFFFFF",
+            pointBorderWidth: 2,
+            pointRadius: 5,
+            pointHoverRadius: 8,
+            pointHitRadius: 10,
+            tension: 0.3,
+            fill: false
           },
           {
             label: "Erros",
             data: erros,
-            backgroundColor: "#FF383C",
+            borderColor: "#A7A7A7",  
+            backgroundColor: "rgba(167, 167, 167, 0.05)",
+            borderWidth: 2,
+            pointBackgroundColor: "#A7A7A7",
+            pointBorderColor: "#FFFFFF",
+            pointBorderWidth: 2,
+            pointRadius: 4,
+            pointHoverRadius: 8,
+            tension: 0.3,
+            fill: false
           },
         ],
       },
@@ -212,6 +239,7 @@
             title: {
               display: true,
               text: "Quantidade de questões",
+              color: "#A7A7A7"
             },
           },
           x: {
@@ -225,76 +253,4 @@
     });
   }
   carregarDashboard();
-  // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
-  // buscando a última medida inserida em tabela contendo as capturas,
-
-  //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
-  //     Para ajustar o "select", ajuste o comando sql em src/models
-  // function atualizarGrafico(idAquario, dados, myChart) {
-  //   fetch(`/medidas/tempo-real/${idAquario}`, { cache: "no-store" })
-  //     .then(function (response) {
-  //       if (response.ok) {
-  //         response.json().then(function (novoRegistro) {
-  //           obterdados(idAquario);
-  //           // alertar(novoRegistro, idAquario);
-  //           console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
-  //           console.log(`Dados atuais do gráfico:`);
-  //           console.log(dados);
-
-  //           let avisoCaptura = document.getElementById(
-  //             `avisoCaptura${idAquario}`,
-  //           );
-  //           avisoCaptura.innerHTML = "";
-
-  //           if (
-  //             novoRegistro[0].momento_grafico ==
-  //             dados.labels[dados.labels.length - 1]
-  //           ) {
-  //             console.log(
-  //               "---------------------------------------------------------------",
-  //             );
-  //             console.log(
-  //               "Como não há dados novos para captura, o gráfico não atualizará.",
-  //             );
-  //             avisoCaptura.innerHTML =
-  //               "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará.";
-  //             console.log("Horário do novo dado capturado:");
-  //             console.log(novoRegistro[0].momento_grafico);
-  //             console.log("Horário do último dado capturado:");
-  //             console.log(dados.labels[dados.labels.length - 1]);
-  //             console.log(
-  //               "---------------------------------------------------------------",
-  //             );
-  //           } else {
-  //             // tirando e colocando valores no gráfico
-  //             dados.labels.shift(); // apagar o primeiro
-  //             dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
-
-  //             dados.datasets[0].data.shift(); // apagar o primeiro de temperatura
-  //             dados.datasets[0].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
-
-  //             myChart.update();
-  //           }
-
-  //           // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-  //           proximaAtualizacao = setTimeout(
-  //             () => atualizarGrafico(idAquario, dados, myChart),
-  //             2000,
-  //           );
-  //         });
-  //       } else {
-  //         console.error("Nenhum dado encontrado ou erro na API");
-  //         // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-  //         proximaAtualizacao = setTimeout(
-  //           () => atualizarGrafico(idAquario, dados, myChart),
-  //           2000,
-  //         );
-  //       }
-  //     })
-  //     .catch(function (error) {
-  //       console.error(
-  //         `Erro na obtenção dos dados p/ gráfico: ${error.message}`,
-  //       );
-  //     });
-  // }
 </script>
