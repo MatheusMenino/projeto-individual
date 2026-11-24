@@ -1,4 +1,4 @@
-var usuarioModel = require("../models/usuarioModel");
+var quizModel = require("../models/quizModel");
 
 function salvarResultado(req, res){
   var fkUsuario = Number(req.body.fkUsuario)
@@ -16,7 +16,7 @@ function salvarResultado(req, res){
     return res.status(400).send("O resultado não corresponde ao total de perguntas!");
   }
 
-  usuarioModel.salvarResultado(fkUsuario, acertos, erros, totalPerguntas)
+  quizModel.salvarResultado(fkUsuario, acertos, erros, totalPerguntas)
   .then(function(resultado){
     return res.status(201).json(resultado);
   })
@@ -34,7 +34,7 @@ function buscarResultados(req, res){
     return res.status(400).send("ID do usuario inválido!!");
   }
 
-  usuarioModel.buscarResultados(idUsuario)
+  quizModel.buscarResultados(idUsuario)
   .then(function(resultados){
     res.json(resultados);
   })
