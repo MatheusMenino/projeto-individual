@@ -179,7 +179,7 @@ function avancar() {
       return;
     }
 
-    fetch("/usuarios/salvarResultado", {
+    fetch("/quiz/salvarResultado", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
