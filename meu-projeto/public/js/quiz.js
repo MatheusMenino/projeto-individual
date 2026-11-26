@@ -84,6 +84,46 @@ const listaDeQuestoes = [
     alternativaD: "Manchester United",
     alternativaCorreta: "alternativaC",
   },
+  {
+  pergunta: "Quem marcou o gol que encerrou o jejum de 23 anos sem títulos do Corinthians, em 1977?",
+  alternativaA: "Sócrates",
+  alternativaB: "Basílio",
+  alternativaC: "Wladimir",
+  alternativaD: "Neto",
+  alternativaCorreta: "alternativaB",
+},
+{
+  pergunta: "Em que ano o Corinthians conquistou sua primeira Copa Libertadores?",
+  alternativaA: "2000",
+  alternativaB: "2008",
+  alternativaC: "2012",
+  alternativaD: "2015",
+  alternativaCorreta: "alternativaC",
+},
+{
+  pergunta: "Qual jogador ficou conhecido como um dos principais líderes da Democracia Corinthiana?",
+  alternativaA: "Ronaldo Fenômeno",
+  alternativaB: "Neto",
+  alternativaC: "Sócrates",
+  alternativaD: "Marcelinho Carioca",
+  alternativaCorreta: "alternativaC",
+},
+{
+  pergunta: "Em que ano o Corinthians conquistou seu primeiro Campeonato Paulista?",
+  alternativaA: "1910",
+  alternativaB: "1914",
+  alternativaC: "1922",
+  alternativaD: "1930",
+  alternativaCorreta: "alternativaB",
+},
+{
+  pergunta: "Qual equipe o Corinthians enfrentou na final da Libertadores de 2012?",
+  alternativaA: "River Plate",
+  alternativaB: "Santos",
+  alternativaC: "Boca Juniors",
+  alternativaD: "Peñarol",
+  alternativaCorreta: "alternativaC",
+},
 ];
 
 // variáveis globais
@@ -93,11 +133,25 @@ let pontuacaoFinal = 0;
 let tentativaIncorreta = 0;
 let certas = 0;
 let erradas = 0;
-let quantidadeDeQuestoes = listaDeQuestoes.length;
+let questoesDaTentativa = [];
+let quantidadeDeQuestoes = 10;
+
+function sortearQuestoes(){
+  let questoesEmbaralhadas = listaDeQuestoes.slice();
+
+  for(let i = questoesEmbaralhadas.length - 1;  i > 0; i --){
+    let indiceAleatorio = Math.floor(Math.random() * (i+1));
+    let temporaria = questoesEmbaralhadas[i];
+    
+    questoesEmbaralhadas[i] = questoesEmbaralhadas[indiceAleatorio];
+    questoesEmbaralhadas[indiceAleatorio] = temporaria;
+  }
+  questoesDaTentativa = questoesEmbaralhadas.slice(0, 10);
+}
 
 function preencherHTMLcomQuestaoAtual(index) {
   habilitarAlternativas(true);
-  const questaoAtual = listaDeQuestoes[index];
+  const questaoAtual = questoesDaTentativa[index]
   numeroDaQuestaoAtual = index;
   console.log("questaoAtual");
   console.log(questaoAtual);
@@ -208,7 +262,7 @@ function avancar() {
 }
 
 function checarResposta() {
-  const questaoAtual = listaDeQuestoes[numeroDaQuestaoAtual]; // questão atual
+  const questaoAtual = questoesDaTentativa[numeroDaQuestaoAtual]; // questão atual
   const respostaQuestaoAtual = questaoAtual.alternativaCorreta; // qual é a resposta correta da questão atual
 
   const options = document.getElementsByName("option"); // recupera alternativas no html
@@ -302,4 +356,6 @@ function finalizarJogo() {
   btnSubmeter.disabled = true;
   btnTentarNovamente.disabled = false;
 }
+
+sortearQuestoes()
 preencherHTMLcomQuestaoAtual(0);
